@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block head%}
+    <title>Admin-Research</title>
+{% endblock head%}
+
+{% block body %}
+ <div class="AtheletePage">
+        <div id="PersonalInfo" class="tabcontent" style="display:block">
+          <h3>Research tab 1 Content</h3>
+          <p>London is the capital city of England.</p>
+        </div>
+
+        <div id="Competition" class="tabcontent">
+          <h3>Research tab 2 Content</h3>
+          <p>Paris is the capital of France.</p> 
+        </div>
+
+        <div id="Payments" class="tabcontent">
+          <h3>Research tab 3 Content</h3>
+          <p>Tokyo is the capital of Japan.</p>
+        </div>
+
+    
+    </div>
+
+<!--    JavaScript    -->
+    <script>
+        function openCity(evt, cityName) {
+        // Declare all variables
+        var i, tabcontent, tablinks;
+
+        // Get all elements with class="tabcontent" and hide them
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+
+        // Get all elements with class="tablinks" and remove the class "active"
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        // Show the current tab, and add an "active" class to the link that opened the tab
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+        }    
+    </script>
+    <script>
+        document.getElementById("research").style.backgroundColor = "#000000"
+        document.getElementById("research").style.color = "white"
+
+    </script>
+{% endblock body%}

@@ -1,0 +1,79 @@
+{% load staticfiles %}
+
+
+<DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel=stylesheet type=text/css href="styles.css"> 
+        <link rel="stylesheet" href="{% static 'styles.css' %}">
+    </head>
+    <body>
+
+<!--    Main Nav Bar    -->
+
+    <div> 
+        <ul class="tab">
+            <li class="tablinks"><a href="" >Main</a></li>
+            <li class="tablinks"><a href="clients">Clients</a></li>
+            <li class="tablinks"><a href="training">Training</a></li>
+            <li class="tablinks"><a href="calendar">Calendar</a></li>
+            <li class="tablinks"><a href="research" style="background-color:#000000; color:white">Research</a></li>
+        </ul>
+    </div>
+        
+<!--    NAVBAR    -->
+    <div class="container Clientsnav">
+       <ul class="tab">
+          <li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'PersonalInfo')" style="display:'active'; ">Tab1</a></li>
+          <li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Competition')">Tab2</a></li>
+          <li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Payments')">Tab 3</a></li>
+        </ul>
+    </div>
+
+<!--    CONTENT    -->        
+    <div class="AtheletePage">
+        <div id="PersonalInfo" class="tabcontent" style="display:block">
+          <h3>Research tab 1 Content</h3>
+          <p>London is the capital city of England.</p>
+        </div>
+
+        <div id="Competition" class="tabcontent">
+          <h3>Research tab 2 Content</h3>
+          <p>Paris is the capital of France.</p> 
+        </div>
+
+        <div id="Payments" class="tabcontent">
+          <h3>Research tab 3 Content</h3>
+          <p>Tokyo is the capital of Japan.</p>
+        </div>
+
+    
+    </div>
+
+<!--    JavaScript    -->
+    <script>
+        function openCity(evt, cityName) {
+        // Declare all variables
+        var i, tabcontent, tablinks;
+
+        // Get all elements with class="tabcontent" and hide them
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+
+        // Get all elements with class="tablinks" and remove the class "active"
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        // Show the current tab, and add an "active" class to the link that opened the tab
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+        }    
+    </script>
+    
+    </body> 
+</html>

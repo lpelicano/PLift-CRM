@@ -1,0 +1,39 @@
+{% load staticfiles %}
+
+<DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel=stylesheet type=text/css href="styles.css">
+        <link rel="stylesheet" href="{% static 'styles.css' %}">
+    </head>
+    <body>
+
+<!--    Main Nav Bar    -->
+
+    <div> 
+        <ul class="tab">
+            <li class="tablinks"><a href="" >Main</a></li>
+            <li class="tablinks"><a href="clients">Clients</a></li>
+            <li class="tablinks"><a href="training">Training</a></li>
+            <li class="tablinks"><a href="calendar" style="background-color:#000000; color:white">Calendar</a></li>
+            <li class="tablinks"><a href="research">Research</a></li>
+        </ul>s
+    </div>
+        
+<!--    CONTENT    -->        
+    <div class="AtheletePage">
+        <div>
+          <h3>Calendar</h3>
+          <p>This is where the Calendar content will be displayed</p>
+        </div>
+        <div class="container">
+        
+<!--        Contains the Calendar   -->
+        <div class="calendarimport">
+        </div>
+        </div>
+    </div>
+    
+    </body> 
+</html>

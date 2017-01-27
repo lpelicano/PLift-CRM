@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block head%}
+    <title>Admin-Clients</title>
+{% endblock head%}
+
+{% block body %}
+<!--    NAVBAR    -->
+    <div class="container Clientsnav">
+       <ul class="tab">
+          <li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'PersonalInfo')" style="display:'active'; ">Personal Info.</a></li>
+          <li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Competition')">Competition</a></li>
+          <li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Payments')">Payments</a></li>
+        </ul>
+    </div>
+
+<!--    CONTENT    -->        
+    <div class="AtheletePage">
+        <div id="PersonalInfo" class="tabcontent" style="display:block">
+          <h3>Personal Info.</h3>
+          <p>London is the capital city of England.</p>
+        </div>
+
+        <div id="Competition" class="tabcontent">
+          <h3>Competition</h3>
+          <p>Paris is the capital of France.</p> 
+        </div>
+
+        <div id="Payments" class="tabcontent">
+          <h3>Payments</h3>
+          <p>Tokyo is the capital of Japan.</p>
+        </div>
+
+    
+    </div>
+
+<!--    JavaScript    -->
+    <script>
+        function openCity(evt, cityName) {
+        // Declare all variables
+        var i, tabcontent, tablinks;
+
+        // Get all elements with class="tabcontent" and hide them
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+
+        // Get all elements with class="tablinks" and remove the class "active"
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        // Show the current tab, and add an "active" class to the link that opened the tab
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+        }    
+    </script>
+    <script>
+        document.getElementById("clients").style.backgroundColor = "#000000"
+        document.getElementById("clients").style.color = "white"
+        
+//        style="background-color:#000000; color:white"
+
+    </script>
+{% endblock body%}

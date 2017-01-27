@@ -1,0 +1,39 @@
+{% load staticfiles %}
+
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel=stylesheet type=text/css href="styles.css">
+        <link rel="stylesheet" href="{% static 'styles.css' %}">
+        
+    </head>
+    <body>
+    <div class="Page1">
+    <div> 
+        <ul class="tab">
+            <li class="tablinks"><a href="" style="background-color:#000000; color:white">Main</a></li>
+            <li class="tablinks"><a href="clients">Clients</a></li>
+            <li class="tablinks"><a href="training">Training</a></li>
+            <li class="tablinks"><a href="calendar">Calendar</a></li>
+            <li class="tablinks"><a href="research">Research</a></li>
+        </ul>
+    </div>
+        
+        
+    <div class="overview"> 
+    </div>
+    <div class="lowerbody ">
+        <div class="clientlist"> 
+        </div>
+        <div class="emptyspace">
+        </div>
+        <div class="rightside">
+            <div class="broadcast">  
+            </div>
+            <div class="calendar"> 
+            </div>
+        </div>
+    </div>
+    </div>
+    </body> 
+</html>

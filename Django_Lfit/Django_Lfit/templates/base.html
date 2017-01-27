@@ -1,0 +1,28 @@
+<!doctype html> 
+
+{% load staticfiles %}
+
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!--        <link rel=stylesheet type=text/css href="styles.css">-->
+        <link rel="stylesheet" href="{% static 'styles.css' %}">
+        
+        {% block head%}
+            <title>NO TITLE</title>
+        {% endblock head%}
+    </head>
+    <body>
+        <div> 
+            <ul class="tab">
+                <li class="tablinks"><a href="home" id ='main'>Main</a></li>
+                <li class="tablinks"><a href="clients" id='clients'>Clients</a></li>
+                <li class="tablinks"><a href="training" id='training'>Training</a></li>
+                <li class="tablinks"><a href="calendar" id='calendar'>Calendar</a></li>
+                <li class="tablinks"><a href="research" id='research'>Research</a></li>
+            </ul>
+        </div>
+        {% block body %}
+        {% endblock body%}
+    </body> 
+</html>

@@ -1,0 +1,53 @@
+{% load staticfiles %}
+
+<DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel=stylesheet type=text/css href="styles.css">
+        <link rel="stylesheet" href="{% static 'styles.css' %}">
+    </head>
+    <body>
+    
+<!--    CONTENT    -->        
+    <div class="AtheletePage">
+        <div id="cycleCreation" class="tabcontent" style="display:block">
+          <h1>Latest Cycle</h1>
+            
+            <div class="upperwidgets">
+                <div class="container currentCycleTotal">
+                    
+                </div>
+                <div class="container cyclesPending">
+                
+                </div>
+            </div>
+            
+            <div class="lowertables">
+                <div class="container LCTable">
+                    
+                </div>
+                <div class="container filler">
+                </div>
+                <div class="container PCTable">
+                </div>            
+            </div>
+            <div class="buttonsCenter">
+                <div class="LCButtons">
+                <button type="button"> Migrate </button>
+                <button type="button"> Remove </button>    
+                <button type="button"> Refresh </button>     
+                </div>
+                <div class="filler" style="height:50px">
+                </div>
+                <div class="PCbuttons">
+                <button type="button"> Migrate </button>
+                <button type="button"> Remove </button>    
+                <button type="button"> Refresh </button>
+                </div>
+            </div>
+        </div>
+
+    </div>    
+    </body> 
+</html>

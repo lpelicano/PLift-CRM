@@ -1,0 +1,167 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block head%}
+    <title>Admin-Training</title>
+{% endblock head%}
+
+{% block body %}
+<!--    NAVBAR    -->
+    <div class="container Clientsnav">
+       <ul class="tab">
+          <li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'cycleCreation')" style="display:'active'; ">Cycle Creation</a></li>
+          <li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'lastestCycle')">Lastest Cycle</a></li>
+          <li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Analysis')">Analysis</a></li>
+        </ul>
+    </div>
+
+<!--    CONTENT    -->        
+    <div class="AtheletePage">
+        <div id="cycleCreation" class="tabcontent" style="display:block">
+            
+            <!--    CONTENT    -->        
+            <!-- First Line -->
+            <div class="topsection">
+                <div class="NameWrapper" style="width: 25%">
+                    <div class="createFirstName">
+                    </div>
+                    <div class="createLastName">
+                    </div>
+                </div>
+
+                <div id="createCycle" class="NameWrapper" style="width: 20%">
+                </div>
+                <div id="createStart" class="NameWrapper" style="width: 15%">
+                </div>
+                <div id="createDays" class="NameWrapper" style="width: 10%">
+                </div>
+                <div id="createWeeks" class="NameWrapper" style="width: 10%">
+                </div>
+                <div id="createCycleName" class="NameWrapper" style="width: 20%">
+                </div>
+            </div>
+            <!-- Second Line -->
+            <div class="midsection">
+                <div class="midWrapper" style="width: 33.33%">
+                    <div class="createFirstName">
+                    </div>
+                    <div class="createLastName">
+                    </div>
+                </div>
+                <div class="midWrapper" style="width: 33.33%">
+                    <div class="createFirstName">
+                    </div>
+                    <div class="createLastName">
+                    </div>
+                </div>
+                <div class="midWrapper" style="width: 33.33%">
+                    <div class="createFirstName">
+                    </div>
+                    <div class="createLastName">
+                    </div>
+                </div>
+
+                
+            </div>
+            <!-- Third Line -->
+            <div class="bottomsection">
+                <div class="bottomWrapper" style="width: 33.33%">
+                    <div class="createFirstName">
+                    </div>
+                    <div class="createLastName">
+                    </div>
+                </div>
+                <div class="bottomWrapper" style="width: 33.33%">
+                    <div class="createFirstName">
+                    </div>
+                    <div class="createLastName">
+                    </div>
+                </div>
+                <div class="bottomWrapper" style="width: 33.33%">
+                    <div class="createFirstName">
+                    </div>
+                    <div class="createLastName">
+                    </div>
+                </div>
+
+                
+            </div>
+            
+        </div>       
+    
+    </div>
+            
+            
+
+        <div id="lastestCycle" class="tabcontent">
+         
+            <div class="upperwidgets">
+                <div class="container currentCycleTotal">
+                    
+                </div>
+                <div class="container cyclesPending">
+                
+                </div>
+            </div>
+            
+            <div class="lowertables">
+                <div class="container LCTable">
+                    
+                </div>
+                <div class="container filler">
+                </div>
+                <div class="container PCTable">
+                </div>            
+            </div>
+            <div class="buttonsCenter">
+                <div class="LCButtons">
+                <button type="button"> Migrate </button>
+                <button type="button"> Remove </button>    
+                <button type="button"> Refresh </button>     
+                </div>
+                <div class="filler" style="height:50px">
+                </div>
+                <div class="PCbuttons">
+                <button type="button"> Migrate </button>
+                <button type="button"> Remove </button>    
+                <button type="button"> Refresh </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="Analysis" class="tabcontent">
+          <h3>Analysis</h3>
+          <p>Tokyo is the capital of Japan.</p>
+        </div>
+
+    
+
+<!--    JavaScript    -->
+    <script>
+        function openCity(evt, cityName) {
+        // Declare all variables
+        var i, tabcontent, tablinks;
+
+        // Get all elements with class="tabcontent" and hide them
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+
+        // Get all elements with class="tablinks" and remove the class "active"
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        // Show the current tab, and add an "active" class to the link that opened the tab
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+        }    
+    </script>
+    <script>
+        document.getElementById("training").style.backgroundColor = "#000000"
+        document.getElementById("training").style.color = "white"
+
+    </script>
+{% endblock body%}

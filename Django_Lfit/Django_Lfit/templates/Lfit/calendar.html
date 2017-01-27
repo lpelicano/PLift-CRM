@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block head%}
+    <title>Admin-Calendar</title>
+{% endblock head%}
+
+{% block body %}
+<!--    CONTENT    -->        
+    <div class="AtheletePage">
+        <div>
+          <h3>Calendar</h3>
+          <p>This is where the Calendar content will be displayed</p>
+        </div>
+        <div class="container">
+        
+<!--        Contains the Calendar   -->
+        <div class="calendarimport">
+        </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById("calendar").style.backgroundColor = "#000000"
+        document.getElementById("calendar").style.color = "white"
+    </script>
+{% endblock body%}

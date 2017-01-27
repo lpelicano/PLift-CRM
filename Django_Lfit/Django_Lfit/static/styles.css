@@ -1,0 +1,286 @@
+html{
+    min-height: 100%; 
+    min-width: 100%; 
+}
+
+.container {
+    padding: 0px 0px;
+}
+
+.Page1 {  
+    min-height: 300px;
+}
+
+.AtheletePage{
+/*    height:800px;*/
+    
+}
+
+.navigationbar {
+    width:90%; 
+    text-align: center;
+    border:1px solid;
+    height: 60px;
+    margin: 20px 30px 0px;
+}
+
+nav ul li{
+    list-style-type: none;
+    display:inline;
+    float:left;
+    padding: 0px 8px;
+    margin: 15px 8px;
+/*                border: 1px solid;*/
+    font-size:20px;
+}
+
+.overview {
+    width:90%; 
+    text-align: center;
+    border:1px solid;
+    height: 100px;
+    margin: 20px 30px 0px;
+}
+
+.lowerbody {
+    width:90%; 
+    text-align: center;
+    height: 350px;
+    padding: 0px;
+    margin: 20px 30px 0px;
+}   
+.clientlist {
+    display: inline-block; float: left;
+    width:55%; 
+    text-align: center;
+    border:1px solid;
+    height: 100%;
+    padding: 0;
+
+}
+.rightside {
+    display: inline-block; float: left;
+    width:40%; 
+    text-align: center;
+    border:1px solid;
+    height: 100%;
+}   
+.broadcast {
+    width:100%; 
+    text-align: center;
+    border:1px solid;
+    height: 160px;
+}
+.calendar {
+    width:100%; 
+    text-align: center;
+    border:1px solid;
+    height: 160px;
+    margin-top: 30px;
+}     
+.emptyspace{
+    width:5%;
+    display: inline-block;
+    height:100%;
+    float:left;
+}
+
+/* Style the list */
+ul.tab {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Float the list items side by side */
+ul.tab li {float: left;}
+
+/* Style the links inside the list items */
+ul.tab li a {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of links on hover */
+ul.tab li a:hover {background-color: #ddd;}
+
+/* Create an active/current tablink class */
+ul.tab li a:focus, .active {background-color: #ccc;}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+    height:500px;
+}
+
+.Clientsnav{
+    margin-top: 20px;
+    float:center;
+}
+
+
+.calendarimport{
+    height: 60%;
+    border: 2px dashed;  
+}
+
+
+.upperwidgets{
+    display:block;
+    border:1px dashed;
+    height: 50px;
+}
+
+.currentCycleTotal{
+    display:inline-block;
+    border: 1px solid;
+    height: 50px;
+    width: 150px;
+    position:center;
+    margin-right: 80px;
+}
+
+.cyclesPending {
+    display:inline-block;
+    border: 1px solid;
+    height: 50px;
+    width: 150px;
+    position:center;
+}
+
+
+.lowertables{
+    display:block;
+    margin-top: 20px;
+    border:1px dashed;
+    height: 400px;    
+}
+
+.LCTable{
+    display:inline-block;
+    border: 1px solid;
+    height: 400px;
+    width: 45%;
+    float:left;
+/*    margin-right: 80px;*/
+}
+
+.filler{
+    display:inline-block;
+    float:left;
+    width:10%;
+    height: 400px;
+    border:1px solid;
+}
+
+.PCTable {
+    display:inline-block;
+    border: 1px solid;
+    height: 400px;
+    width: 45%;
+    float:left;
+}
+
+.buttonsCenter{
+    display:block;
+    margin-top: 20px;
+    border:3px solid;
+    height: 200px;
+}
+
+.LCButtons{
+    display:inline-block;
+    float:left;
+    text-align:center;
+    margin-top: 20px;
+    height: 50px;
+    width:45%;
+}
+
+.PCButtons{
+    display:inline-block;
+    float:left;
+    text-align:center;
+    margin-top: 20px;
+    height: 50px;
+    width:45%;
+}
+
+
+/* -------- CYCLE CREATION -------- */
+/*
+/* ---------- Top Section ---------- */
+.to
+
+.NameWrapper {
+    display: inline-block; float: left; 
+    height: 90px;
+}
+
+.createFirstName {
+    display: block; float: left;
+    margin-right: 10px;
+    width: 100%;
+    border: 0px solid;
+    height: 30px;
+    background-color: red
+}
+
+.createLastName {
+    display: block;
+    float: left;
+    width: 100%;
+    border: 0px solid;
+    height: 60px;
+    background-color: grey
+
+}
+
+/* ---------- Middle Section ---------- */
+
+.midWrapper {
+    display: inline-block; 
+    float: left;
+    width: 33.33%;
+    height: 90px;
+    border: 1px solid;
+    border-color: white;
+    
+}
+
+.midsection {
+    display: block;
+    float: left;
+    margin-top: 10px;
+    width: 100%;
+}
+
+/* ---------- Bottom Section ---------- */
+.bottomWrapper {
+    display: inline-block; 
+    float: left;
+    width: 33.33%;
+    height: 90px;
+    border: 1px solid;
+    border-color: white;
+    
+}
+
+.bottomsection {
+    display: block;
+    float: left;
+    margin-top: 10px;
+    width: 100%;
+}
+
