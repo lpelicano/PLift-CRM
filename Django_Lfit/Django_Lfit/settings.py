@@ -123,7 +123,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'Django_Lfit', 'static'),
 )
 
-LOGIN_REDIRECT_URL = "/account/home"
+#LOGIN_REDIRECT_URL = "/account/home"
 
 
 
