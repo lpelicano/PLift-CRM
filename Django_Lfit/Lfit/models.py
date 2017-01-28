@@ -13,8 +13,6 @@ method_choices = (('cash', 'cash'),('pp', 'paypal'),('bank', 'bank transfer'),)
 live_choices = (('y', 'yes'),('n', 'no'),)
 trainingtype_choices = (('t','TRAINING'), ('o', 'OFFSEASON'), ('p', 'PEAKING'),)
 
-
-
 #MAIN > Overview
 #MAIN > Overview (Widget)
 #MAIN > Small Calendar (Widget)
