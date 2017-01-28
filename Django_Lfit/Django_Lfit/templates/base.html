@@ -13,7 +13,6 @@
         {% endblock head%}
     </head>
     <body>
-<!--    {% if user.is_authenticated %}-->
         <div> 
             <ul class="tab">
                 <li class="tablinks"><a href="home" id ='main'>Main</a></li>
@@ -21,10 +20,8 @@
                 <li class="tablinks"><a href="training" id='training'>Training</a></li>
                 <li class="tablinks"><a href="calendar" id='calendar'>Calendar</a></li>
                 <li class="tablinks"><a href="research" id='research'>Research</a></li>
-<!--                <li class="tablinks"><a href="logout" id="logout">Logout</a></li>-->
             </ul>
         </div>
-<!--    {% endif %}-->
         {% block body %}
         {% endblock body%}
     </body> 
