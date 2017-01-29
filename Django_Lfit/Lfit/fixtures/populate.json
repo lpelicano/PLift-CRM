@@ -30,5 +30,53 @@
       "agecategory": "junior",
       "affiliatedivision": "Greater London"
     }
+  },
+  {
+    "model": "Lfit.PersonalInfo",
+    "pk": 3,
+    "fields": {
+      "first": "Michel",
+      "last": "Baston",
+      "dob": "1985-02-09",
+      "age": "35",
+      "gender": "m",
+      "email": "example@lfit.com",
+      "mobile": "07545755107",
+      "weightclass": "59kg",
+      "agecategory": "junior",
+      "affiliatedivision": "Greater London"
+    }
+  },
+  {
+    "model": "Lfit.PersonalInfo",
+    "pk": 4,
+    "fields": {
+      "first": "Jermaine",
+      "last": "Rooney",
+      "dob": "1992-03-09",
+      "age": "24",
+      "gender": "f",
+      "email": "johnnyboy@lfit.com",
+      "mobile": "07545755107",
+      "weightclass": "59kg",
+      "agecategory": "junior",
+      "affiliatedivision": "Greater London"
+    }
+  },
+  {
+    "model": "Lfit.PersonalInfo",
+    "pk": 5,
+    "fields": {
+      "first": "Thomas",
+      "last": "Treburger",
+      "dob": "1992-03-09",
+      "age": "24",
+      "gender": "f",
+      "email": "johnnyboy@lfit.com",
+      "mobile": "07545755107",
+      "weightclass": "59kg",
+      "agecategory": "junior",
+      "affiliatedivision": "Greater London"
+    }
   }
 ]

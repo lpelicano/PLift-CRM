@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block head%}
+    <title>Admin-Export</title>
+    <link rel="stylesheet" href="{% static 'export.css' %}">
+{% endblock head%}
+
+{%block content%}
+{% endblock content%}
+
+{% block body %}
+    <br> 
+    {% for n in queryall %}
+    <div class="pi-div">
+        <p class="pi-ptags"> {{n.first}} </p>
+        <p class="pi-ptags"> {{n.last}} </p>
+        <p class="pi-ptags"> {{n.dob}} </p>
+        <p class="pi-ptags"> {{n.age}} </p>
+        <p class="pi-ptags"> {{n.gender}} </p>
+        <p class="pi-ptags"> {{n.email}} </p>
+        <p class="pi-ptags"> {{n.mobile}} </p>
+        <p class="pi-ptags"> {{n.weightclass}} </p>
+        <p class="pi-ptags"> {{n.agecategory}} </p>
+        <p class="pi-ptags"> {{n.affiliatedivision}} </p>
+    </div>
+    {% endfor %}
+
+    <!--JavaScript code-->
+    <script>
+        document.getElementById("main").style.backgroundColor = "#000000"
+        document.getElementById("main").style.color = "white"
+        
+//        style="background-color:#000000; color:white"
+
+    </script>
+{% endblock body%}

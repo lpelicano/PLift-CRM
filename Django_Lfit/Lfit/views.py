@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect 
 from django.contrib.auth.decorators import login_required
 
+from Lfit.models import PersonalInfo
 
 # Create your views here.
 
@@ -26,6 +27,12 @@ def training(request):
 #@login_required 
 def research(request): 
 	return render(request, 'Lfit/research.html')
+
+def export(request):
+	if request.method != 'POST': 
+		queryall = PersonalInfo.objects.all()
+#		print ('Landed on : ', name.first)
+		return render(request, 'Lfit/export.html', {'queryall': queryall})
 
 
 

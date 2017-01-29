@@ -11,4 +11,5 @@ urlpatterns = [
     url(r'^research$', views.research, name = 'research'),
     url(r'^login$', login, {'template_name':'login.html'}),
     url(r'^logout$', logout, {'template_name':'logout.html'}),
+    url(r'^export$', views.export, name = 'export'),
 ]
