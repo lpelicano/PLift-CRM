@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required
 
 from Lfit.models import PersonalInfo
 from .forms import PersonalInfoForm
+from calendar import HTMLCalendar
 
 # Create your views here.
 
@@ -45,6 +46,7 @@ def export(request):
 def personalinput(request):
 	if request.method == 'POST': 
 		form = PersonalInfoForm(request.POST)
+		print('FORM IS: ', form)
 		if form.is_valid():
 			obj = PersonalInfo()
 			obj.first = form.cleaned_data['first']
@@ -63,11 +65,8 @@ def personalinput(request):
 		form = PersonalInfoForm()
 		return render(request, 'Lfit/personalinput.html', {'form': form})	
 
-
-
-
-
-
-
-
+def calendarpage(request): 
+	cal = HTMLCalendar()
+	monthly = cal.formatmonth(2016,5)
+	return render(request, 'Lfit/calendarproto.html', {'monthly': monthly})
 
