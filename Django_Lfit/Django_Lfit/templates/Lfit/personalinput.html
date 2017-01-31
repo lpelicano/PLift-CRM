@@ -10,17 +10,23 @@
 {% endblock content%}
 
 {% block body %}
-    <form method='POST'> 
-    {% for input in form %}
-    {% csrf_token %}
-    
-    {{ input.label}}
-    {{ input }}
-    <br>
+    <div class="container" style="padding-left:50px; padding-top:40px;">
+        <form method='POST'> 
 
-    {% endfor %}
-    <input type="submit" value="Submit">
-    </form>
+        {% csrf_token %}
+<!--
+    #DESCRIPTIVE METHOD
+    {% for input in form %}
+        {{ input.errors }}
+        {{ input.label}}
+        {{ input }}
+        <br>
+        {% endfor %}
+-->
+        {{ form.as_p}}
+        <input type="submit" value="Submit">
+        </form>
+    </div>
 
     <!--JavaScript code-->
     <script>
