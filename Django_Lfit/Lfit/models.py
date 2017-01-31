@@ -31,7 +31,7 @@ class PersonalInfo(models.Model):
 	agecategory = CharField(max_length=50, null=True)
 	affiliatedivision = CharField(max_length=50, default = "")
 
-#CLIENTS > Competition
+#CLIENTS > Competition=
 class CompResults(models.Model):
 	compdate = DateField(null=True)
 	first =  CharField(max_length=50, null=True)
