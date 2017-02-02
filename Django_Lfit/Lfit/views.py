@@ -38,13 +38,13 @@ def research(request):
 def forms_nav(request):
 	return render(request, 'Lfit/forms_nav.html')
 
-#===#===#===#===#===#===#
-#===#===#===#===#===#===#
+#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#
+#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#
 #
 # DEVELOPMENT VIEWS
 #
-#===#===#===#===#===#===#
-#===#===#===#===#===#===#
+#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#
+#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#
 
 
 def export(request):
@@ -53,24 +53,13 @@ def export(request):
 	return render(request, 'Lfit/export.html', {'queryall': queryall}) 
 
 
-# === Personal Details Form === #
+# === Personal Details Form ============================== #
 
 def personalinput(request):
 	if request.method == 'POST': 
 		form = PersonalInfoForm(request.POST)
-		print('FORM IS: ', form)
 		if form.is_valid():
-			obj = PersonalInfo()
-			obj.first = form.cleaned_data['first']
-			obj.last = form.cleaned_data['last']
-			obj.dob = form.cleaned_data['dob']
-			obj.age = form.cleaned_data['age']
-			obj.gender = form.cleaned_data['gender']
-			obj.email = form.cleaned_data['email']
-			obj.mobile = form.cleaned_data['mobile']
-			obj.weightclass = form.cleaned_data['weightclass']
-			obj.agecategory = form.cleaned_data['agecategory']
-			obj.affiliatedivision = form.cleaned_data['affiliatedivision']
+			obj = form.save(commit=False)
 			obj.save()
 			return redirect(index)
 		else:
@@ -79,14 +68,13 @@ def personalinput(request):
 		form = PersonalInfoForm()
 		return render(request, 'Lfit/personalinput.html', {'form': form})	
 
-# === Competition Results Form === #
+# === Competition Results Form =========================== #
 def compresultsinput(request):
 	if request.method == 'POST': 
 		form = CompResultsForm(request.POST)
-		print('FORM IS: ', form)
 		if form.is_valid():
-			for key, value in form.cleaned_data.iteritems():
-				print (key, value)
+			obj = form.save(commit=false)
+			obj.save
 			return redirect(index)
 		else:
 			return render(request, 'Lfit/compresultsinput.html', {'form': form})
@@ -94,14 +82,13 @@ def compresultsinput(request):
 		form = CompResultsForm()
 		return render(request, 'Lfit/compresultsinput.html', {'form': form})	
 
-# === Payments Form === #
+# === Payments Form ======================================= #
 def paymentsinput(request):
 	if request.method == 'POST': 
 		form = PaymentsForm(request.POST)
-		print('FORM IS: ', form)
 		if form.is_valid():
-			instance = form.save(commit=False)
-			instance.save()
+			obj = form.save(commit=False)
+			obj.save()
 			return redirect(index)
 		else:
 			return render(request, 'Lfit/paymentsinput.html', {'form': form})
@@ -110,20 +97,23 @@ def paymentsinput(request):
 		return render(request, 'Lfit/paymentsinput.html', {'form': form})	
 
 
-# === Cycle Creation Form === #
+# === Cycle Creation Form ================================= #
 def cyclecreateinput(request):
 	if request.method == 'POST': 
 		form = CycleCreateForm(request.POST)
-		print('FORM IS: ', form)
 		if form.is_valid():
-			for key, value in form.cleaned_data.iteritems():
-				print(key, value)
+			obj = form.save(commit=False)
+			obj.save()
 			return redirect(index)
 		else:
 			return render(request, 'Lfit/cyclecreateinput.html', {'form': form})
 	else: 
 		form = CycleCreateForm()
 		return render(request, 'Lfit/cyclecreateinput.html', {'form': form})	
+
+
+
+# === Calendarrrrr???????? ================================= #
 
 def calendarpage(request): 
 	cal = HTMLCalendar()
