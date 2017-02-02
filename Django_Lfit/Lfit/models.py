@@ -6,7 +6,7 @@ from django.db.models import CharField, DateField, IntegerField, TextField, Emai
 # CHOICES >
 	# .. Clients
 gender_choices = (('m', 'Male'), ('f', 'Female'),)
-payplan_choices = (('12', '12'), ('14', '14'),)
+payplan_choices = ((12, '12'), (14, '14'),)
 paid_choices = (('y', 'yes'),('n', 'no'),)
 method_choices = (('cash', 'Cash'),('pp', 'Paypal'),('bank', 'Bank Transfer'),)
 	# .. Training

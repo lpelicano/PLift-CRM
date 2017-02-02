@@ -35,6 +35,9 @@ def training(request):
 def research(request): 
 	return render(request, 'Lfit/research.html')
 
+def forms_nav(request):
+	return render(request, 'Lfit/forms_nav.html')
+
 #===#===#===#===#===#===#
 #===#===#===#===#===#===#
 #
@@ -48,7 +51,6 @@ def export(request):
 	queryall = PersonalInfo.objects.all()
 	#		print ('Landed on : ', name.first)
 	return render(request, 'Lfit/export.html', {'queryall': queryall}) 
-
 
 
 # === Personal Details Form === #
@@ -98,8 +100,8 @@ def paymentsinput(request):
 		form = PaymentsForm(request.POST)
 		print('FORM IS: ', form)
 		if form.is_valid():
-			for key, value in form.cleaned_data.iteritems():
-				print(key, value)
+			instance = form.save(commit=False)
+			instance.save()
 			return redirect(index)
 		else:
 			return render(request, 'Lfit/paymentsinput.html', {'form': form})
@@ -122,8 +124,6 @@ def cyclecreateinput(request):
 	else: 
 		form = CycleCreateForm()
 		return render(request, 'Lfit/cyclecreateinput.html', {'form': form})	
-
-
 
 
 
