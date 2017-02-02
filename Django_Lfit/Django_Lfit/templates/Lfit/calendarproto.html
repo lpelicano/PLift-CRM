@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block head%}
+    <title>Admin-Calendar</title>
+    <link rel="stylesheet" href="{% static 'calendar.css' %}">
+{% endblock head%}
+
+{%block content%}
+{% endblock content%}
+
+{% block body %}
+    
+    {% load reading_tags %}
+
+    <div id="calendar">
+        {% reading_calendar year month reading_list %}
+        <p> hello </p>
+    </div>
+
+    <!--JavaScript code-->
+    <script> 
+        document.getElementById("calendar").style.backgroundColor = "#000000"
+        document.getElementById("calendar").style.color = "white"
+    </script>
+{% endblock body%}

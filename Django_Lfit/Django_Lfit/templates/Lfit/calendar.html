@@ -7,6 +7,8 @@
 
 {% block body %}
 <!--    CONTENT    -->        
+    <div>
+    </div>
     <div class="AtheletePage">
         <div>
           <h3>Calendar</h3>
@@ -14,13 +16,15 @@
         </div>
         <div class="container">
         
-<!--        Contains the Calendar   -->
-        <div class="calendarimport">
-        </div>
+<!--        Contains the Calendar   -->                     <iframe src="https://calendar.google.com/calendar/embed?src=3gg73ss3180gloct31b0u6j38c%40group.calendar.google.com&ctz=Europe/London" style="border: 0" width="800" height="600" frameborder="0" scrolling="no">
+        </iframe>            
+            
         </div>
     </div>
     <script>
-        document.getElementById("calendar").style.backgroundColor = "#000000"
-        document.getElementById("calendar").style.color = "white"
+        document.getElementById("calendar_nav").style.backgroundColor = "#000000"
+        document.getElementById("calendar_nav").style.color = "white"
+            
+    
     </script>
 {% endblock body%}

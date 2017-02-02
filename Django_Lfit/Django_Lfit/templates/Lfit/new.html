@@ -1,0 +1,53 @@
+<!doctype html> 
+
+
+
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!--        <link rel=stylesheet type=text/css href="styles.css">-->
+        <link rel="stylesheet" href="/static/styles.css">
+        
+        
+    <title>Admin-Calendar</title>
+    <link rel="stylesheet" href="https://www.google.com/calendar/static/00d9d788103e4d6015e933695aeaa41fembedcompiled_fastui.css">
+    <script type=”text/javascript” src="https://www.google.com/calendar/static/00d9d788103e4d6015e933695aeaa41fembedcompiled__en.js"></script>
+
+    </head>
+    <body>
+        <div> 
+            <ul class="tab">
+                <li class="tablinks"><a href="home" id ='main'>Main</a></li>
+                <li class="tablinks"><a href="clients" id='clients'>Clients</a></li>
+                <li class="tablinks"><a href="training" id='training'>Training</a></li>
+                <li class="tablinks"><a href="calendar" id='calendar_nav'>Calendar</a></li>
+                <li class="tablinks"><a href="research" id='research'>Research</a></li>
+                <li class="tablinks"><a href="forms_nav" id='forms_nav'>Forms</a></li>
+            </ul>
+        </div>
+        
+<!--    CONTENT    -->        
+    <div>
+    <?php include ('custom_calendar.php');?>
+    </div>
+    <div class="AtheletePage">
+        <div>
+          <h3>Calendar</h3>
+          <p>This is where the Calendar content will be displayed</p>
+        </div>
+        <div class="container">
+        
+<!--        Contains the Calendar   -->                     <iframe src="https://calendar.google.com/calendar/embed?src=3gg73ss3180gloct31b0u6j38c%40group.calendar.google.com&ctz=Europe/London" style="border: 0" width="800" height="600" frameborder="0" scrolling="no">
+        </iframe>            
+            
+        </div>
+    </div>
+    <script>
+        document.getElementById("calendar_nav").style.backgroundColor = "#000000"
+        document.getElementById("calendar_nav").style.color = "white"
+            
+    
+    </script>
+
+    </body> 
+</html>
