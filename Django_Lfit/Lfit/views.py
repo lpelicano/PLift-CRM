@@ -89,7 +89,7 @@ def compresultsinput(request):
 		else:
 			return render(request, 'Lfit/compresultsinput.html', {'form': form})
 	else: 
-		form = PersonalInfoForm()
+		form = CompResultsForm()
 		return render(request, 'Lfit/compresultsinput.html', {'form': form})	
 
 # === Payments Form === #
@@ -104,7 +104,7 @@ def paymentsinput(request):
 		else:
 			return render(request, 'Lfit/paymentsinput.html', {'form': form})
 	else: 
-		form = PersonalInfoForm()
+		form = PaymentsForm()
 		return render(request, 'Lfit/paymentsinput.html', {'form': form})	
 
 
@@ -120,7 +120,7 @@ def cyclecreateinput(request):
 		else:
 			return render(request, 'Lfit/cyclecreateinput.html', {'form': form})
 	else: 
-		form = PersonalInfoForm()
+		form = CycleCreateForm()
 		return render(request, 'Lfit/cyclecreateinput.html', {'form': form})	
 
 
