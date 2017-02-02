@@ -124,9 +124,6 @@ def cyclecreateinput(request):
 		return render(request, 'Lfit/cyclecreateinput.html', {'form': form})	
 
 
-
-
-
 def calendarpage(request): 
 	cal = HTMLCalendar()
 	monthly = cal.formatmonth(2016,5)
