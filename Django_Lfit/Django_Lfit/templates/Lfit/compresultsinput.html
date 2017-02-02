@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block head%}
+    <title>Admin-Export</title>
+    <link rel="stylesheet" href="{% static 'export.css' %}">
+{% endblock head%}
+
+{%block content%}
+{% endblock content%}
+
+{% block body %}
+    <div class="container" style="padding-left:50px; padding-top:40px;">
+        <form method='POST'> 
+
+        {% csrf_token %}
+<!--
+    #DESCRIPTIVE METHOD
+    {% for input in form %}
+        {{ input.errors }}
+        {{ input.label}}
+        {{ input }}
+        <br>
+        {% endfor %}
+-->
+        {{ form.as_p}}
+        <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <!--JavaScript code-->
+    <script>
+        document.getElementById("main").style.backgroundColor = "#000000"
+        document.getElementById("main").style.color = "white"
+        
+//        style="background-color:#000000; color:white"
+
+    </script>
+{% endblock body%}
