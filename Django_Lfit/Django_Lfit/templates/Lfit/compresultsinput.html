@@ -14,16 +14,8 @@
         <form method='POST'> 
 
         {% csrf_token %}
-<!--
-    #DESCRIPTIVE METHOD
-    {% for input in form %}
-        {{ input.errors }}
-        {{ input.label}}
-        {{ input }}
-        <br>
-        {% endfor %}
--->
-        {{ form.as_p}}
+            
+        {{ form.as_table}}
         <input type="submit" value="Submit">
         </form>
     </div>

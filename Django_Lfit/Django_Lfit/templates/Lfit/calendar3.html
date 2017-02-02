@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block head%}
+    <title>Admin-Calendar</title>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.css' />
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.print.css' />
+    <link rel='stylesheet' href='https://fullcalendar.io/css/base.css?3.1.0-1.5.0-4'/>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type='text/javascript'  src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js'></script>
+    <script type='text/javascript'  src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.js'></script>
+
+    <script>
+            $(document).ready(function() {
+
+                // page is now ready, initialize the calendar...
+
+                $('#calendar').fullCalendar({
+                    // put your options and callbacks here
+                })
+
+            });
+    </script>
+
+{% endblock head%}
+
+{% block body %}
+<!--    CONTENT    -->        
+    <div class="AtheletePage">
+        <div>
+          <h3>Calendar</h3>
+          <p>This is where the Calendar content will be displayed</p>
+        </div>
+        <div class="container">
+        
+<!--        Contains the Calendar   -->
+            
+            <div id='calendar'></div>            
+        <iframe src="https://calendar.google.com/calendar/embed?src=3gg73ss3180gloct31b0u6j38c%40group.calendar.google.com&ctz=Europe/London" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>            
+            
+        </div>
+    </div>
+    <script>
+        document.getElementById("calendar_nav").style.backgroundColor = "#000000"
+        document.getElementById("calendar_nav").style.color = "white"
+    </script>
+{% endblock body%}
