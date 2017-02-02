@@ -71,11 +71,7 @@ def personalinput(request):
 			obj.affiliatedivision = form.cleaned_data['affiliatedivision']
 			obj.save()
 			return redirect(index)
-<<<<<<< Updated upstream
 		else:
-=======
-		else: 
->>>>>>> Stashed changes
 			return render(request, 'Lfit/personalinput.html', {'form': form})
 	else: 
 		form = PersonalInfoForm()
