@@ -5,10 +5,10 @@ from django.db.models import CharField, DateField, IntegerField, TextField, Emai
 
 # CHOICES >
 	# .. Clients
-gender_choices = (('m', 'male'), ('f', 'female'),)
+gender_choices = (('m', 'Male'), ('f', 'Female'),)
 payplan_choices = (('12', '12'), ('14', '14'),)
 paid_choices = (('y', 'yes'),('n', 'no'),)
-method_choices = (('cash', 'cash'),('pp', 'paypal'),('bank', 'bank transfer'),)
+method_choices = (('cash', 'Cash'),('pp', 'Paypal'),('bank', 'Bank Transfer'),)
 	# .. Training
 live_choices = (('y', 'yes'),('n', 'no'),)
 trainingtype_choices = (('t','TRAINING'), ('o', 'OFFSEASON'), ('p', 'PEAKING'),)
@@ -29,11 +29,13 @@ class PersonalInfo(models.Model):
 	mobile = CharField(max_length=50, null=True)
 	weightclass = CharField(max_length=50, null=True)
 	agecategory = CharField(max_length=50, null=True)
-	affiliatedivision = CharField(max_length=50, default = "")
+	affiliatedivision = CharField(max_length=50, null=True)
 
 #CLIENTS > Competition=
 class CompResults(models.Model):
 	compdate = DateField(null=True)
+	compname = CharField(max_length=50, null=True)
+	complocation = CharField(max_length=200, null=True)
 	first =  CharField(max_length=50, null=True)
 	last = CharField(max_length=50, null=True)
 	gender = CharField(max_length=50, choices=gender_choices, null=True)
@@ -46,6 +48,9 @@ class CompResults(models.Model):
 	bp1 = DecimalField(max_digits=4, decimal_places=1, null=True)
 	bp2 = DecimalField(max_digits=4, decimal_places=1, null=True)
 	bp3 = DecimalField(max_digits=4, decimal_places=1, null=True)
+	dl1 = DecimalField(max_digits=4, decimal_places=1, null=True)
+	dl2 = DecimalField(max_digits=4, decimal_places=1, null=True)
+	dl3 = DecimalField(max_digits=4, decimal_places=1, null=True)
 	comptotal = DecimalField(max_digits=5, decimal_places=1, null=True)
 	wilks = DecimalField(max_digits=5, decimal_places=2, null=True)
 
@@ -59,7 +64,7 @@ class Payments(models.Model):
 	weeks = IntegerField(null=True)
 	totaltopay = IntegerField(null=True)
 	paid = CharField(max_length=50, choices=paid_choices, null=True)
-	method = CharField(max_length=50, choices=method_choices, null=True)
+	paymentmethod = CharField(max_length=50, choices=method_choices, null=True)
 
 #TRAINING > Cycle Creation (WIDGET)
 	first =  CharField(max_length=50, null=True)
@@ -70,7 +75,7 @@ class Payments(models.Model):
 	de1rm = DecimalField(max_digits=3, decimal_places=2, null=True)
 
 #TRAINING > Latest Creation
-class LatestCycles(models.Model):
+class CycleCreate(models.Model):
 	live = CharField(max_length = 3, choices = live_choices, default='no')
 	first =  CharField(max_length=50, null=True)
 	last = CharField(max_length=50, null=True)

@@ -1,9 +1,10 @@
 from django.shortcuts import render, redirect 
 from django.contrib.auth.decorators import login_required
 
-from Lfit.models import PersonalInfo
-from .forms import PersonalInfoForm
+from Lfit.models import PersonalInfo, CompResults, Payments, CycleCreate
+from .forms import PersonalInfoForm, CompResultsForm, PaymentsForm, CycleCreateForm  
 from calendar import HTMLCalendar
+
 
 # Create your views here.
 
@@ -35,13 +36,22 @@ def research(request):
 	return render(request, 'Lfit/research.html')
 
 #===#===#===#===#===#===#
-#DEVELOPMENT VIEWS
 #===#===#===#===#===#===#
+#
+# DEVELOPMENT VIEWS
+#
+#===#===#===#===#===#===#
+#===#===#===#===#===#===#
+
 
 def export(request):
 	queryall = PersonalInfo.objects.all()
 	#		print ('Landed on : ', name.first)
 	return render(request, 'Lfit/export.html', {'queryall': queryall}) 
+
+
+
+# === Personal Details Form === #
 
 def personalinput(request):
 	if request.method == 'POST': 
@@ -61,9 +71,61 @@ def personalinput(request):
 			obj.affiliatedivision = form.cleaned_data['affiliatedivision']
 			obj.save()
 			return redirect(index)
+		else:
+			return render(request, 'Lfit/personalinput.html', {'form': form})
 	else: 
 		form = PersonalInfoForm()
 		return render(request, 'Lfit/personalinput.html', {'form': form})	
+
+# === Competition Results Form === #
+def compresultsinput(request):
+	if request.method == 'POST': 
+		form = CompResultsForm(request.POST)
+		print('FORM IS: ', form)
+		if form.is_valid():
+			for key, value in form.cleaned_data.iteritems():
+				print (key, value)
+			return redirect(index)
+		else:
+			return render(request, 'Lfit/compresultsinput.html', {'form': form})
+	else: 
+		form = PersonalInfoForm()
+		return render(request, 'Lfit/compresultsinput.html', {'form': form})	
+
+# === Payments Form === #
+def paymentsinput(request):
+	if request.method == 'POST': 
+		form = PaymentsForm(request.POST)
+		print('FORM IS: ', form)
+		if form.is_valid():
+			for key, value in form.cleaned_data.iteritems():
+				print(key, value)
+			return redirect(index)
+		else:
+			return render(request, 'Lfit/paymentsinput.html', {'form': form})
+	else: 
+		form = PersonalInfoForm()
+		return render(request, 'Lfit/paymentsinput.html', {'form': form})	
+
+
+# === Cycle Creation Form === #
+def cyclecreateinput(request):
+	if request.method == 'POST': 
+		form = CycleCreateForm(request.POST)
+		print('FORM IS: ', form)
+		if form.is_valid():
+			for key, value in form.cleaned_data.iteritems():
+				print(key, value)
+			return redirect(index)
+		else:
+			return render(request, 'Lfit/cyclecreateinput.html', {'form': form})
+	else: 
+		form = PersonalInfoForm()
+		return render(request, 'Lfit/cyclecreateinput.html', {'form': form})	
+
+
+
+
 
 def calendarpage(request): 
 	cal = HTMLCalendar()

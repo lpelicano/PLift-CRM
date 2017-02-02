@@ -12,5 +12,8 @@ urlpatterns = [
     url(r'^login$', login, {'template_name':'login.html'}),
     url(r'^logout$', logout, {'template_name':'logout.html'}),
     url(r'^export$', views.export, name = 'export'),
-    url(r'^input$', views.personalinput, name = 'personalinput'),
+    url(r'^personalinput$', views.personalinput, name = 'personalinput'),
+    url(r'^compresultsinput$', views.compresultsinput, name = 'compresultsinput'),
+    url(r'^paymentsinput$', views.paymentsinput, name = 'paymentsinput'),
+    url(r'^cyclecreateinput$', views.cyclecreateinput, name = 'cyclecreatinput'),
 ]
