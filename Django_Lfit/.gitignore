@@ -1,5 +1,4 @@
-<<<<<<< HEAD
 *.pyc 
-=======
-*.pyc
->>>>>>> d513256b7e7022cb7ef9f52c8471335bff15e959
+Django_Lfit/__pycache__/*.pyc
+Lfit/__pycache__/*.pyc
+Lfit/migrations/__pycache__/*.pyc
