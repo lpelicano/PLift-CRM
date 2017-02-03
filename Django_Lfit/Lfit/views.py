@@ -73,7 +73,7 @@ def compresultsinput(request):
 	if request.method == 'POST': 
 		form = CompResultsForm(request.POST)
 		if form.is_valid():
-			obj = form.save(commit=false)
+			obj = form.save(commit=False)
 			obj.save
 			return redirect(index)
 		else:
