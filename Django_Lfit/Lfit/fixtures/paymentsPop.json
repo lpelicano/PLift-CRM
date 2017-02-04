@@ -1,0 +1,77 @@
+[
+  {
+    "model": "Lfit.Payments",
+    "pk": 1,
+    "fields": {
+      "paymentdate": "01/02/2016",
+      "first": "Bill",
+      "last": "Board",
+      "cyclename": "OFF111111",
+      "payplan": "14",
+      "weeks": "5",
+      "totaltopay": "25",
+      "paid": "y",
+      "paymentmethod": "cash",
+    }
+  },
+  {
+    "model": "Lfit.Payments",
+    "pk": 2,
+    "fields": {
+      "paymentdate": "02/02/2016",
+      "first": "Lou",
+      "last": "Tennant",
+      "cyclename": "TRA035416",
+      "payplan": "14",
+      "weeks": "4",
+      "totaltopay": "63",
+      "paid": "n",
+      "paymentmethod": "pp",
+    }
+  },
+  {
+    "model": "Lfit.Payments",
+    "pk": 3,
+    "fields": {
+      "paymentdate": "03/02/2016",
+      "first": "Chris",
+      "last": "Mass",
+      "cyclename": "TRA201216",
+      "payplan": "14",
+      "weeks": "4",
+      "totaltopay": "20",
+      "paid": "y",
+      "paymentmethod": "bank",
+    }
+  },
+  {
+    "model": "Lfit.Payments",
+    "pk": 4,
+    "fields": {
+      "paymentdate": "04/02/2016",
+      "first": "Joe",
+      "last": "King",
+      "cyclename": "PEA311116",
+      "payplan": "14",
+      "weeks": "4",
+      "totaltopay": "45",
+      "paid": "n",
+      "paymentmethod": "pp",
+    }
+  },
+  {
+    "model": "Lfit.Payments",
+    "pk": 5,
+    "fields": {
+      "paymentdate": "05/02/2016",
+      "first": "Jack",
+      "last": "Pott",
+      "cyclename": "PEA091216",
+      "payplan": "14",
+      "weeks": "10",
+      "totaltopay": "50",
+      "paid": "n",
+      "paymentmethod": "pp",
+    }
+  }
+]
