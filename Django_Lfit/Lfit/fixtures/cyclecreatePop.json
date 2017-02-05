@@ -6,8 +6,8 @@
       "live": "y",
       "first": "Peter",
       "last": "Pan",
-      "startdate": "26/06/16",
-      "enddate": "31/8/16",
+      "startdate": "2016-06-16",
+      "enddate": "2016-08-31",
       "trainingtype": "t",
       "days": "3",
       "weeks": "6",
@@ -63,7 +63,7 @@
       "bs2Amov": "DB Bench",
       "dmAmov": "Sumo DL w belt",
       "dvAmov": "Rack Pulls",
-      "dsAmov": "Sumo RDLs",
+      "dsAmov": "Sumo RDLs"
     }
   },
   {
@@ -73,8 +73,8 @@
       "live": "n",
       "first": "Jimmy",
       "last": "Cheong",
-      "startdate": "29/03/2016",
-      "enddate": "01/8/2016",
+      "startdate": "2016-03-29",
+      "enddate": "2016-08-01",
       "trainingtype": "o",
       "days": "4",
       "weeks": "9",
@@ -130,7 +130,7 @@
       "bs2mov": "DB Bench",
       "dmmov": "Sumo DL w belt",
       "dvmov": "",
-      "dsmov": "Sumo RDLs",
+      "dsmov": "Sumo RDLs"
     }
-  },
+  }
 ]

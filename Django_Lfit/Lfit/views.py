@@ -38,6 +38,7 @@ def research(request):
 def forms_nav(request):
 	return render(request, 'Lfit/forms_nav.html')
 
+
 #===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#
 #===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#
 #
@@ -45,6 +46,9 @@ def forms_nav(request):
 #
 #===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#
 #===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#
+
+def mattyplot(request):
+	return render(request, 'Lfit/matty.html') 
 
 
 def export(request):

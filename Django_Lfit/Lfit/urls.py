@@ -16,6 +16,7 @@ urlpatterns = [
     url(r'^compresultsinput$', views.compresultsinput, name = 'compresultsinput'),
     url(r'^paymentsinput$', views.paymentsinput, name = 'paymentsinput'),
     url(r'^cyclecreateinput$', views.cyclecreateinput, name = 'cyclecreatinput'),
-    url(r'^forms_nav', views.forms_nav, name='forms nav'),
+    url(r'^forms_nav$', views.forms_nav, name='forms nav'),
+    url(r'^matty', views.mattyplot,name = 'matplotlib')
 
 ]

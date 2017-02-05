@@ -5,7 +5,7 @@
     "fields": {
       "first": "Jimmy",
       "last": "Cheong",
-      "compdate": "05/02/2016",
+      "compdate": "2016-02-05",
       "compname": "24",
       "complocation": "bethnal green",
       "bodyweight": "75.1",
@@ -20,7 +20,7 @@
       "dl2": "215",
       "dl3": "230",
       "comptotal": "540",
-      "wilks": "400",
+      "wilks": "400"
     }
   },
   {
@@ -29,7 +29,7 @@
     "fields": {
       "first": "Louie",
       "last": "Pelicano",
-      "compdate": "08/03/2016",
+      "compdate": "2016-03-08",
       "compname": "16",
       "complocation": "cambridge cupic",
       "bodyweight": "57.7",
@@ -44,7 +44,7 @@
       "dl2": "0",
       "dl3": "210",
       "comptotal": "445",
-      "wilks": "409.66",
+      "wilks": "409.66"
     }
   },
   {
@@ -53,7 +53,7 @@
     "fields": {
       "first": "Ben",
       "last": "Dover",
-      "compdate": "21/11/2014",
+      "compdate": "2014-11-21",
       "compname": "39",
       "complocation": "northampton",
       "bodyweight": "65.9",
@@ -68,7 +68,7 @@
       "dl2": "215",
       "dl3": "230",
       "comptotal": "540",
-      "wilks": "460",
+      "wilks": "460"
     }
   },
   {
@@ -77,7 +77,7 @@
     "fields": {
       "first": "Chris",
       "last": "Peacock",
-      "compdate": "05/02/2016",
+      "compdate": "2016-02-05",
       "compname": "19",
       "complocation": "bethnal green",
       "bodyweight": "75.1",
@@ -92,7 +92,7 @@
       "dl2": "215",
       "dl3": "230",
       "comptotal": "540",
-      "wilks": "400",
+      "wilks": "400"
     }
   },
   {
@@ -101,7 +101,7 @@
     "fields": {
       "first": "Annie",
       "last": "Bodie",
-      "compdate": "05/02/2016",
+      "compdate": "2016-02-05",
       "compname": "50",
       "complocation": "bethnal green",
       "bodyweight": "75.1",
@@ -116,7 +116,7 @@
       "dl2": "215",
       "dl3": "230",
       "comptotal": "540",
-      "wilks": "400",
+      "wilks": "400"
     }
   }
 ]
