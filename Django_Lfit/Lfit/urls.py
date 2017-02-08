@@ -16,11 +16,16 @@ urlpatterns = [
     url(r'^export$', views.export, name = 'export'),
     url(r'^matty', views.mattyplot,name = 'matplotlib'),
 
-#====#=====#====#  Form URLs #====#=====#====#=====#
+    url(r'^personalinput$', views.personalinput, name = 'personalinput'),
+    url(r'^compresultsinput$', views.compresultsinput, name = 'compresultsinput'),
+    url(r'^paymentsinput$', views.paymentsinput, name = 'paymentsinput'),
+    url(r'^cyclecreateinput$', views.cyclecreateinput, name = 'cyclecreatinput'),
 
-    url(r'^personalinput$', CustomFormView.as_view(template_name='Lfit/personalinput.html')),
-    url(r'^compresultsinput$', CustomFormView.as_view(template_name='Lfit/compresultsinput.html')),
-    url(r'^paymentsinput$', CustomFormView.as_view(template_name='Lfit/paymentsinput.html')),  
-    url(r'^cyclecreateinput$', CustomFormView.as_view(template_name='Lfit/cyclecreateinput.html')),  
+#====#=====#====# Advanced Form URLs #====#=====#====#=====#
+
+    # url(r'^personalinput$', CustomFormView.as_view(template_name='Lfit/personalinput.html')),
+    # url(r'^compresultsinput$', CustomFormView.as_view(template_name='Lfit/compresultsinput.html')),
+    # url(r'^paymentsinput$', CustomFormView.as_view(template_name='Lfit/paymentsinput.html')),  
+    # url(r'^cyclecreateinput$', CustomFormView.as_view(template_name='Lfit/cyclecreateinput.html')),  
 ]
 
