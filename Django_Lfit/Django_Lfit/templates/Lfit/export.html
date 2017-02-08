@@ -11,21 +11,38 @@
 
 {% block body %}
     <br> 
+    <br>
+    <div class="container">
+    <table class="table_css" align="center">
+    <tr>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>DOB</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Email</th>
+        <th>Mobile</th>
+        <th>Weight Class</th>
+        <th>Age category</th>
+        <th>Affiliate Division</th> 
+    </tr>
     {% for n in queryall %}
-    <div class="pi-div">
-        <p class="pi-ptags"> {{n.first}} </p>
-        <p class="pi-ptags"> {{n.last}} </p>
-        <p class="pi-ptags"> {{n.dob}} </p>
-        <p class="pi-ptags"> {{n.age}} </p>
-        <p class="pi-ptags"> {{n.gender}} </p>
-        <p class="pi-ptags"> {{n.email}} </p>
-        <p class="pi-ptags"> {{n.mobile}} </p>
-        <p class="pi-ptags"> {{n.weightclass}} </p>
-        <p class="pi-ptags"> {{n.agecategory}} </p>
-        <p class="pi-ptags"> {{n.affiliatedivision}} </p>
-    </div>
+<!--    <div class="pi-div">-->
+    <tr>
+        <td class="td_css" style="">{{n.first}}</td>
+        <td class="td_css">{{n.last}}</td>
+        <td class="td_css">{{n.dob}}</td>
+        <td class="td_css">{{n.age}}</td>
+        <td class="td_css">{{n.gender}}</td>
+        <td class="td_css">{{n.email}}</td>
+        <td class="td_css">{{n.mobile}}</td>
+        <td class="td_css">{{n.weightclass}}</td>
+        <td class="td_css">{{n.agecategory}}</td>
+        <td class="td_css">{{n.affiliatedivision}}</td>
+    </tr>
     {% endfor %}
-
+    </table>
+    </div>
     <!--JavaScript code-->
     <script>
         document.getElementById("main").style.backgroundColor = "#000000"

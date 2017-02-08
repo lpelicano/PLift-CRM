@@ -3,6 +3,7 @@
 
 {% block head%}
     <title>Admin-Clients</title>
+    <link rel="stylesheet" href="{% static 'clients.css' %}">
 {% endblock head%}
 
 {% block body %}
@@ -20,16 +21,131 @@
         <div id="PersonalInfo" class="tabcontent" style="display:block">
           <h3>Personal Info.</h3>
           <p>London is the capital city of England.</p>
+        
+            <div class="container">
+        <table class="table_css" align="center">
+        <tr>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>DOB</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Email</th>
+            <th>Mobile</th>
+            <th>Weight Class</th>
+            <th>Age category</th>
+            <th>Affiliate Division</th> 
+        </tr>
+        {% for n in query_personal %}
+    <!--    <div class="pi-div">-->
+        <tr>
+            <td class="td_css" style="">{{n.first}}</td>
+            <td class="td_css">{{n.last}}</td>
+            <td class="td_css">{{n.dob}}</td>
+            <td class="td_css">{{n.age}}</td>
+            <td class="td_css">{{n.gender}}</td>
+            <td class="td_css">{{n.email}}</td>
+            <td class="td_css">{{n.mobile}}</td>
+            <td class="td_css">{{n.weightclass}}</td>
+            <td class="td_css">{{n.agecategory}}</td>
+            <td class="td_css">{{n.affiliatedivision}}</td>
+        </tr>
+        {% endfor %}
+        </table>
+        </div>
+        
         </div>
 
         <div id="Competition" class="tabcontent">
           <h3>Competition</h3>
           <p>Paris is the capital of France.</p> 
+        <div class="container">
+                <table class="table_css" align="center">
+                <tr>
+                    <th>Comp. Date</th>
+                    <th>Comp. Name</th>
+                    <th>Location</th>
+                    <th>First</th>
+                    <th>Last</th>
+                    <th>Gender</th>
+                    <th>Age</th>
+                    <th>Body Weight</th>
+                    <th>Weight Class</th>
+                    <th>SQ-1</th>
+                    <th>SQ-2</th>
+                    <th>SQ-3</th>
+                    <th>BP-1</th>
+                    <th>BP-2</th>
+                    <th>Bp-3</th>
+                    <th>DL-1</th>
+                    <th>DL-2</th>
+                    <th>DL-3</th>
+                    <th>Total</th>
+                    <th>Wilks</th>
+                </tr>
+                {% for n in query_comp %}
+            <!--    <div class="pi-div">-->
+                <tr>
+                    <td class="td_css">{{n.compdate}}</td>
+                    <td class="td_css">{{n.compname}}</td>
+                    <td class="td_css">{{n.complocation}}</td>
+                    <td class="td_css">{{n.first}}</td>
+                    <td class="td_css">{{n.last}}</td>
+                    <td class="td_css">{{n.gender}}</td>
+                    <td class="td_css">{{n.age}}</td>
+                    <td class="td_css">{{n.bodyweight}}</td>
+                    <td class="td_css">{{n.weightclass}}</td>
+                    <td class="td_css">{{n.sq1}}</td>
+                    <td class="td_css">{{n.sq2}}</td>
+                    <td class="td_css">{{n.sq3}}</td>
+                    <td class="td_css">{{n.bp1}}</td>
+                    <td class="td_css">{{n.bp2}}</td>
+                    <td class="td_css">{{n.bp3}}</td>
+                    <td class="td_css">{{n.dl1}}</td>
+                    <td class="td_css">{{n.dl2}}</td>
+                    <td class="td_css">{{n.dl3}}</td>
+                    <td class="td_css">{{n.comptotal}}</td>
+                    <td class="td_css">{{n.wilks}}</td>
+                </tr>
+                {% endfor %}
+                </table>
+        </div>
+        
         </div>
 
         <div id="Payments" class="tabcontent">
           <h3>Payments</h3>
           <p>Tokyo is the capital of Japan.</p>
+
+        <div class="container">
+                <table class="table_css" align="center">
+                <tr>
+                    <th>Pay Date</th>
+                    <th>First</th>
+                    <th>Last</th>
+                    <th>Cycle</th>
+                    <th>Pay Plan</th>
+                    <th>Weeks</th>
+                    <th>Total to Pay</th>
+                    <th>Payment method</th>
+                </tr>
+                {% for n in query_payments %}
+            <!--    <div class="pi-div">-->
+                <tr>
+                    <td class="td_css" style="">{{n.paymentdate}}</td>
+                    <td class="td_css">{{n.first}}</td>
+                    <td class="td_css">{{n.last}}</td>
+                    <td class="td_css">{{n.cyclename}}</td>
+                    <td class="td_css">{{n.payplan}}</td>
+                    <td class="td_css">{{n.weeks}}</td>
+                    <td class="td_css">{{n.totaltopay}}</td>
+                    <td class="td_css">{{n.paymentmethod}}</td>
+
+                </tr>
+                {% endfor %}
+                </table>
+        </div>
+        
         </div>
 
     
