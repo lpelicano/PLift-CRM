@@ -8,11 +8,23 @@ from calendar import HTMLCalendar
 from django.views.generic import TemplateView
 from django.views.generic.edit import FormView
 
+from .matty import Main
+import numpy as np
+from mpld3 import fig_to_html
+from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas 
+
 
 class CustomView(TemplateView):
 
 	def get(self, request): 
 		return render(request, self.template_name)
+
+def research(request): 
+
+	plt,fig,ax = Main.plotgraph()
+	canvas = FigureCanvas(fig)
+	fig_html = fig_to_html(fig)
+	return render(request, 'Lfit/research.html')
 	 
 # Create your views here.
 

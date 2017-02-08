@@ -8,7 +8,8 @@ urlpatterns = [
     url(r'^clients$', CustomView.as_view(template_name = 'Lfit/clients.html')),
     url(r'^calendar$', CustomView.as_view(template_name = 'Lfit/calendar.html')),
     url(r'^training$', CustomView.as_view(template_name = 'Lfit/training.html')),
-    url(r'^research$', CustomView.as_view(template_name = 'Lfit/research.html')),
+    url(r'^research$', views.research), 
+    # url(r'^research$', CustomView.as_view(template_name = 'Lfit/research.html')),
     url(r'^forms_nav$', CustomView.as_view(template_name = 'Lfit/forms_nav.html')),    
     url(r'^login$', login, {'template_name':'login.html'}),
 
