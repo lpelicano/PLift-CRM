@@ -17,6 +17,13 @@ from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 class CustomView(TemplateView):
 
 	def get(self, request): 
+		if self.template_name == 'Lfit/clients.html':
+				query_personal = PersonalInfo.objects.all()
+				query_comp = CompResults.objects.all()
+				query_payments = Payments.objects.all()
+				context = {'query_personal':query_personal, 'query_comp':query_comp, 'query_payments':query_payments}
+				return render(request, self.template_name, context)
+
 		return render(request, self.template_name)
 
 def research(request): 
