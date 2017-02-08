@@ -20,13 +20,15 @@ class CustomView(TemplateView):
 		return render(request, self.template_name)
 
 def research(request): 
-
-	plt,fig,ax = Main.plotgraph()
-	canvas = FigureCanvas(fig)
-	fig_html = fig_to_html(fig)
-	return render(request, 'Lfit/research.html')
+	# plt,fig,ax,figure = Main.plotgraph()
+	#canvas = FigureCanvas(fig)
+	return render(request, 'Lfit/research.html')#, {'figure':figure})
 	 
 # Create your views here.
+
+def line_graph(request):
+	return render(request, 'Lfit/S2B.html')
+
 
 def login_redirect(request):
 	return redirect('/account/login')

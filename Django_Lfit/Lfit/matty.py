@@ -22,7 +22,10 @@ class Main():
 
 	def plotgraph(): 
 		import numpy as np
+#		import matplotlib 
+#		matplotlib.use('Agg')
 		import matplotlib.pyplot as plt,mpld3
+		import mpld3
 
 		S2B = np.linspace(0.9,3.0,0.1)
 
@@ -36,13 +39,16 @@ class Main():
 		line_SQT = ax.plot(np.arange(len(SQT)),SQT)
 		line_DL = ax.plot(np.arange(len(DL)),DL)
 
-
 		plt.title('Correlation between correct fatigue and strength level')
 		plt.xlabel('Strength/BodyWeight')
 		plt.ylabel('Total Fatigue % per week')
 		plt.grid(True)
 
-		return plt,fig, ax
+		mpld3.save_html(fig, 'S2B.html')
+
+		# figure = mpld3.fig_to_html(fig, template_type='simple')
+
+		return plt,fig, ax, figure
 
 if __name__ == '__main__':
 	Main()
