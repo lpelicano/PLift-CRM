@@ -22,6 +22,8 @@ urlpatterns = [
     url(r'^paymentsinput$', views.paymentsinput, name = 'paymentsinput'),
     url(r'^cyclecreateinput$', views.cyclecreateinput, name = 'cyclecreatinput'),
 
+    url(r'^research2$', views.line_graph),
+
 #====#=====#====# Advanced Form URLs #====#=====#====#=====#
 
     # url(r'^personalinput$', CustomFormView.as_view(template_name='Lfit/personalinput.html')),
