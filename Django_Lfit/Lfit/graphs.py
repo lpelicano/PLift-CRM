@@ -18,7 +18,7 @@
 # 		fig.set_size_inches(3,4,forward=True)
 # 		#plt.draw()
 
-class Main(): 
+class Graph(): 
 
 	def plotgraph(): 
 		import numpy as np
@@ -26,6 +26,8 @@ class Main():
 #		matplotlib.use('Agg')
 		import matplotlib.pyplot as plt,mpld3
 		import mpld3
+		import shutil
+		import os 
 
 		S2B = np.linspace(0.9,3.0,0.1)
 
@@ -33,7 +35,7 @@ class Main():
 
 		BP = np.array([16,20,20,22,22,24,26,26,28,28])
 		SQT = np.array([8,8,10,10,12,12,12,14,14,14,16,16,16,18,18,18,20,20,20])
-		DL = np.array([6,6,6,6,8,8,8,10,10,10,10,12,12,12,14,14,14,16,16,18,18,18,20,20,20])
+		DL = np.array([3,6,6,6,8,8,8,10,10,10,10,12,12,12,14,14,14,16,16,18,18,18,20,20,20])
 
 		line_BP = ax.plot(np.arange(len(BP)),BP)
 		line_SQT = ax.plot(np.arange(len(SQT)),SQT)
@@ -45,11 +47,18 @@ class Main():
 		plt.grid(True)
 
 		mpld3.save_html(fig, 'S2B.html')
-
-		# figure = mpld3.fig_to_html(fig, template_type='simple')
-
 		return plt,fig, ax, figure
 
+	def moveS2B():
+		
+		#Remove existing S2B.file
+		os.remove(os.getcwd() + '/Django_Lfit/templates/Lfit/S2B.html')
+
+		#Moves files from manage.py path to templates inner folder 
+		src = os.getcwd() + '/S2B.html'
+		dst = os.getcwd() + '/Django_Lfit/templates/Lfit/'
+		shutil.move(src, dst)
+
 if __name__ == '__main__':
-	Main()
+	Graph()
 

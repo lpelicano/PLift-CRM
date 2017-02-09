@@ -1,10 +1,22 @@
 .table_css {
     
    position:center;
-    
+    width: 90%;
 }
 
 table, th, td{
-    border: 1px solid black;
+/*    border: 1px solid black;*/
     padding: 5px 10px;
+    border-collapse: collapse;
+}
+
+tr:hover {
+    background-color:#f5f5f5;   
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: #4CAF50;
+    color: white;
 }

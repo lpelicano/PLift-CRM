@@ -3,6 +3,7 @@
 
 {% block head%}
     <title>Admin-Training</title>
+    <link rel="stylesheet" href="{% static 'clients.css' %}">
 {% endblock head%}
 
 {% block body %}
@@ -10,7 +11,9 @@
     <div class="container Clientsnav">
        <ul class="tab">
           <li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'cycleCreation')" style="display:'active'; ">Cycle Creation</a></li>
-          <li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'lastestCycle')">Lastest Cycle</a></li>
+          <li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'latestCycle')">Latest Cycle</a></li>
+           <li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'liveCycle')">Live Cycle</a></li>
+          <li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'pendingCycle')">Pending Cycle</a></li>
           <li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Analysis')">Analysis</a></li>
         </ul>
     </div>
@@ -91,9 +94,7 @@
     
     </div>
             
-            
-
-        <div id="lastestCycle" class="tabcontent">
+    <div id="latestCycle" class="tabcontent">
          
             <div class="upperwidgets">
                 <div class="container currentCycleTotal">
@@ -125,6 +126,379 @@
                 <button type="button"> Migrate </button>
                 <button type="button"> Remove </button>    
                 <button type="button"> Refresh </button>
+                </div>
+            </div>
+        </div>            
+
+        <div id="liveCycle" class="tabcontent">
+         
+            <div class="upperwidgets">
+                <div class="container currentCycleTotal">
+                    
+                </div>
+                <div class="container cyclesPending">
+                
+                </div>
+            </div>
+            
+        <div class="lowertables" style="overflow-x:auto;">            
+        <table class="table_css" align="center">
+        <tr>
+
+<!--     Standard info       -->
+            
+            <th>First</th>
+            <th>Last</th>
+
+            <th>Cycle Name</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Training Type</th>
+            <th>Days</th>
+            <th>Weeks</th>
+            
+<!--     Fatigue protocols       -->
+            <th>sslots</th>
+            <th>bslots</th>
+            <th>dslots</th>
+            <th>totslots</th>
+            <th>totpct</th>
+            <th>spctot</th>
+            <th>bpctot</th>
+            <th>dpcttot</th>
+            
+<!--     # .. > A* fatigue protocols       -->
+            <th>smpct</th>   
+            <th>svpct</th>
+            <th>sspct</th>
+            <th>bmpct</th>
+            <th>bv1pct</th>
+            <th>bv2pct</th>
+            <th>bs1pct</th>
+            <th>bs2pct</th>
+            <th>dmpct</th>
+            <th>dvpct</th>
+            <th>dspct</th>
+<!--	# .. > B* fatigue protocols-->
+            
+            <th>smApct</th>
+            <th>svApct</th>
+            <th>ssApct</th>
+            <th>bmApct</th>
+            <th>bv1Apct</th>
+            <th>bv2Apct</th>
+            <th>bs1Apct</th>
+            <th>bs2Apct</th>
+            <th>dmApct</th>
+            <th>dvApct</th>
+            <th>dsApct</th>
+            
+<!--	# .. > A* movements-->        
+            <th>smmov</th>
+            <th>svmov</th>
+            <th>ssmov</th>
+            <th>bmmov</th>
+            <th>bv1mov</th>
+            <th>bv2mov</th>
+            <th>bs1mov</th>
+            <th>bs2mov</th>
+            <th>dmmov</th>
+            <th>dvmov</th>
+            <th>dsmov</th>
+<!--	# .. > B* movements-->        
+            <th>smAmov</th>
+            <th>smAmov</th>
+            <th>svAmov</th>
+            <th>ssAmov</th>
+            <th>bmAmov</th>
+            <th>bv1Amov</th>
+            <th>bv2Amov</th>
+            <th>bs1Amov</th>
+            <th>bs2Amov</th>
+            <th>dmAmov</th>
+            <th>dvAmov</th>
+            <th>dsAmov</th>
+        </tr>    
+<!--  Extracted records using for loop  -->
+        {% for q in query_live %}
+
+        <tr>
+            
+    <!--     Standard info       -->
+            
+            <td>{{q.first}}</td>
+            <td>{{q.last}}</td>
+            <td>{{q.cyclename}}</td>
+            <td>{{q.startdate}}</td>
+            <td>{{q.enddate}}</td>
+            <td>{{q.trainingtype}}</td>
+            <td>{{q.days}}</td>
+            <td>{{q.weeks}}</td>
+            <td>{{q.totaldays}}</td>
+            
+    <!--     Fatigue protocols       -->
+            
+            <td>{{q.sslots}}</td>
+            <td>{{q.bslots}}</td>
+            <td>{{q.dslots}}</td>
+            <td>{{q.totslots}}</td>
+            <td>{{q.totpct}}</td>
+            <td>{{q.spctot}}</td>
+            <td>{{q.bpcttot}}</td>
+            <td>{{q.dpcttot}}</td>
+            
+            
+    <!-- # .. > A* fatigue protocols -->
+            
+            <td>{{q.smpct}}</td>
+            <td>{{q.svpct}}</td>
+            <td>{{q.sspct}}</td>
+            <td>{{q.bmpct}}</td>
+            <td>{{q.bv1pct}}</td>
+            <td>{{q.bv2pct}}</td>
+            <td>{{q.bs1pct}}</td>
+            <td>{{q.bs2pct}}</td>
+            <td>{{q.dmpct}}</td>
+            <td>{{q.dvpct}}</td>
+            <td>{{q.dspct}}</td>
+            
+    <!--	# .. > B* fatigue protocols-->
+            
+            <td>{{q.smApct}}</td>
+            <td>{{q.svApct}}</td>
+            <td>{{q.ssApct}}</td>
+            <td>{{q.bmApct}}</td>
+            <td>{{q.bv1Apct}}</td>
+            <td>{{q.bv2Apct}}</td>
+            <td>{{q.bs1Apct}}</td>
+            <td>{{q.bs2Apct}}</td>
+            <td>{{q.dmApct}}</td>
+            <td>{{q.dvApct}}</td>
+            <td>{{q.dsApct}}</td>
+            
+    <!--	# .. > A* movements-->                    
+            
+            <td>{{q.smmov}}</td>
+            <td>{{q.svmov}}</td>
+            <td>{{q.ssmov}}</td>
+            <td>{{q.bmmov}}</td>
+            <td>{{q.bv1mov}}</td>
+            <td>{{q.bv2mov}}</td>
+            <td>{{q.bs1mov}}</td>
+            <td>{{q.bs2mov}}</td>
+            <td>{{q.dmmov}}</td>
+            <td>{{q.dvmov}}</td>
+            <td>{{q.dsmov}}</td>
+
+    <!--	# .. > B* movements-->                   
+            <td>{{q.smAmov}}</td>
+            <td>{{q.svAmov}}</td>
+            <td>{{q.ssAmov}}</td>
+            <td>{{q.bmAmov}}</td>
+            <td>{{q.bv1Amov}}</td>
+            <td>{{q.bv2Amov}}</td>
+            <td>{{q.bs1Amov}}</td>
+            <td>{{q.bs2Amov}}</td>
+            <td>{{q.dmAmov}}</td>
+            <td>{{q.dvAmov}}</td>
+            <td>{{q.dsAmov}}</td>
+
+        </tr>
+        {% endfor %}
+        </table>
+            </div>
+            
+            <div class="buttonsCenter">
+                <div class="LCButtons">
+                <button type="button"> Migrate </button>
+                <button type="button"> Remove </button>    
+                <button type="button"> Refresh </button>     
+                </div>
+            </div>
+        </div>
+        <div id="pendingCycle" class="tabcontent">
+         
+            <div class="upperwidgets">
+                <div class="container currentCycleTotal">
+                    
+                </div>
+                <div class="container cyclesPending">
+                
+                </div>
+            </div>
+            
+        <div class="lowertables" style="overflow-x:auto;">            
+        <table class="table_css" align="center">
+        <tr>
+
+<!--     Standard info       -->
+            
+            <th>First</th>
+            <th>Last</th>
+
+            <th>Cycle Name</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Training Type</th>
+            <th>Days</th>
+            <th>Weeks</th>
+            
+<!--     Fatigue protocols       -->
+            <th>sslots</th>
+            <th>bslots</th>
+            <th>dslots</th>
+            <th>totslots</th>
+            <th>totpct</th>
+            <th>spctot</th>
+            <th>bpctot</th>
+            <th>dpcttot</th>
+            
+<!--     # .. > A* fatigue protocols       -->
+            <th>smpct</th>   
+            <th>svpct</th>
+            <th>sspct</th>
+            <th>bmpct</th>
+            <th>bv1pct</th>
+            <th>bv2pct</th>
+            <th>bs1pct</th>
+            <th>bs2pct</th>
+            <th>dmpct</th>
+            <th>dvpct</th>
+            <th>dspct</th>
+<!--	# .. > B* fatigue protocols-->
+            
+            <th>smApct</th>
+            <th>svApct</th>
+            <th>ssApct</th>
+            <th>bmApct</th>
+            <th>bv1Apct</th>
+            <th>bv2Apct</th>
+            <th>bs1Apct</th>
+            <th>bs2Apct</th>
+            <th>dmApct</th>
+            <th>dvApct</th>
+            <th>dsApct</th>
+            
+<!--	# .. > A* movements-->        
+            <th>smmov</th>
+            <th>svmov</th>
+            <th>ssmov</th>
+            <th>bmmov</th>
+            <th>bv1mov</th>
+            <th>bv2mov</th>
+            <th>bs1mov</th>
+            <th>bs2mov</th>
+            <th>dmmov</th>
+            <th>dvmov</th>
+            <th>dsmov</th>
+<!--	# .. > B* movements-->        
+            <th>smAmov</th>
+            <th>smAmov</th>
+            <th>svAmov</th>
+            <th>ssAmov</th>
+            <th>bmAmov</th>
+            <th>bv1Amov</th>
+            <th>bv2Amov</th>
+            <th>bs1Amov</th>
+            <th>bs2Amov</th>
+            <th>dmAmov</th>
+            <th>dvAmov</th>
+            <th>dsAmov</th>
+        </tr>    
+<!--  Extracted records using for loop  -->
+        {% for q in query_pending %}
+
+        <tr>
+            
+    <!--     Standard info       -->
+            
+            <td>{{q.first}}</td>
+            <td>{{q.last}}</td>
+            <td>{{q.cyclename}}</td>
+            <td>{{q.startdate}}</td>
+            <td>{{q.enddate}}</td>
+            <td>{{q.trainingtype}}</td>
+            <td>{{q.days}}</td>
+            <td>{{q.weeks}}</td>
+            <td>{{q.totaldays}}</td>
+            
+    <!--     Fatigue protocols       -->
+            
+            <td>{{q.sslots}}</td>
+            <td>{{q.bslots}}</td>
+            <td>{{q.dslots}}</td>
+            <td>{{q.totslots}}</td>
+            <td>{{q.totpct}}</td>
+            <td>{{q.spctot}}</td>
+            <td>{{q.bpcttot}}</td>
+            <td>{{q.dpcttot}}</td>
+            
+            
+    <!-- # .. > A* fatigue protocols -->
+            
+            <td>{{q.smpct}}</td>
+            <td>{{q.svpct}}</td>
+            <td>{{q.sspct}}</td>
+            <td>{{q.bmpct}}</td>
+            <td>{{q.bv1pct}}</td>
+            <td>{{q.bv2pct}}</td>
+            <td>{{q.bs1pct}}</td>
+            <td>{{q.bs2pct}}</td>
+            <td>{{q.dmpct}}</td>
+            <td>{{q.dvpct}}</td>
+            <td>{{q.dspct}}</td>
+            
+    <!--	# .. > B* fatigue protocols-->
+            
+            <td>{{q.smApct}}</td>
+            <td>{{q.svApct}}</td>
+            <td>{{q.ssApct}}</td>
+            <td>{{q.bmApct}}</td>
+            <td>{{q.bv1Apct}}</td>
+            <td>{{q.bv2Apct}}</td>
+            <td>{{q.bs1Apct}}</td>
+            <td>{{q.bs2Apct}}</td>
+            <td>{{q.dmApct}}</td>
+            <td>{{q.dvApct}}</td>
+            <td>{{q.dsApct}}</td>
+            
+    <!--	# .. > A* movements-->                    
+            
+            <td>{{q.smmov}}</td>
+            <td>{{q.svmov}}</td>
+            <td>{{q.ssmov}}</td>
+            <td>{{q.bmmov}}</td>
+            <td>{{q.bv1mov}}</td>
+            <td>{{q.bv2mov}}</td>
+            <td>{{q.bs1mov}}</td>
+            <td>{{q.bs2mov}}</td>
+            <td>{{q.dmmov}}</td>
+            <td>{{q.dvmov}}</td>
+            <td>{{q.dsmov}}</td>
+
+    <!--	# .. > B* movements-->                   
+            <td>{{q.smAmov}}</td>
+            <td>{{q.svAmov}}</td>
+            <td>{{q.ssAmov}}</td>
+            <td>{{q.bmAmov}}</td>
+            <td>{{q.bv1Amov}}</td>
+            <td>{{q.bv2Amov}}</td>
+            <td>{{q.bs1Amov}}</td>
+            <td>{{q.bs2Amov}}</td>
+            <td>{{q.dmAmov}}</td>
+            <td>{{q.dvAmov}}</td>
+            <td>{{q.dsAmov}}</td>
+
+        </tr>
+        {% endfor %}
+        </table>
+            </div>
+            
+            <div class="buttonsCenter">
+                <div class="LCButtons">
+                <button type="button"> Migrate </button>
+                <button type="button"> Remove </button>    
+                <button type="button"> Refresh </button>     
                 </div>
             </div>
         </div>

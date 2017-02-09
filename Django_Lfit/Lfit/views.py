@@ -8,10 +8,10 @@ from calendar import HTMLCalendar
 from django.views.generic import TemplateView
 from django.views.generic.edit import FormView
 
-from .matty import Main
+from .graphs import Graph
 import numpy as np
 from mpld3 import fig_to_html
-from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas 
+#from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas 
 
 
 class CustomView(TemplateView):
@@ -23,7 +23,11 @@ class CustomView(TemplateView):
 				query_payments = Payments.objects.all()
 				context = {'query_personal':query_personal, 'query_comp':query_comp, 'query_payments':query_payments}
 				return render(request, self.template_name, context)
-
+		if self.template_name == 'Lfit/training.html':
+				query_live = CycleCreate.objects.filter(live='y')
+				query_pending = CycleCreate.objects.filter(live='n')
+				context = {'query_live':query_live, 'query_pending':query_pending}
+				return render(request, self.template_name, context) 
 		return render(request, self.template_name)
 
 def research(request): 
