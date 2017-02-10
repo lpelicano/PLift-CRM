@@ -1,5 +1,5 @@
 from django.db import models
-from django.db.models import CharField, DateField, IntegerField, TextField, EmailField, DecimalField
+from django.db.models import CharField, DateField, IntegerField, TextField, EmailField, DecimalField, ForeignKey
 
 # Create your models here.
 
@@ -31,13 +31,16 @@ class PersonalInfo(models.Model):
 	agecategory = CharField(max_length=50, null=True)
 	affiliatedivision = CharField(max_length=50, null=True)
 
+	def __str__(self):
+		return "%s %s" % (self.first, self.last)
+
 #CLIENTS > Competition=
 class CompResults(models.Model):
+	client = models.ForeignKey(PersonalInfo, on_delete=models.CASCADE, null=True)
+
 	compdate = DateField(null=True)
 	compname = CharField(max_length=50, null=True)
 	complocation = CharField(max_length=200, null=True)
-	first =  CharField(max_length=50, null=True)
-	last = CharField(max_length=50, null=True)
 	gender = CharField(max_length=50, choices=gender_choices, null=True)
 	age = IntegerField(null=True)
 	bodyweight = DecimalField(max_digits=4, decimal_places=1, null=True)
@@ -56,9 +59,9 @@ class CompResults(models.Model):
 
 #CLIENTS > Payments
 class Payments(models.Model):
+	# first =  CharField(max_length=50, null=True)
+	client = models.ForeignKey(PersonalInfo, on_delete=models.CASCADE, null=True)
 	paymentdate = DateField(null=True)
-	first =  CharField(max_length=50, null=True)
-	last = CharField(max_length=50, null=True)
 	cyclename = CharField(max_length=50, null=True)
 	payplan = IntegerField(choices = payplan_choices, null=True)
 	weeks = IntegerField(null=True)
@@ -66,19 +69,22 @@ class Payments(models.Model):
 	paid = CharField(max_length=50, choices=paid_choices, null=True)
 	paymentmethod = CharField(max_length=50, choices=method_choices, null=True)
 
-#TRAINING > Cycle Creation (WIDGET)
-	first =  CharField(max_length=50, null=True)
-	last = CharField(max_length=50, null=True)
-	#quick analysis
-	se1rm = DecimalField(max_digits=3, decimal_places=2, null=True)
-	be1rm = DecimalField(max_digits=3, decimal_places=2, null=True)
-	de1rm = DecimalField(max_digits=3, decimal_places=2, null=True)
+# #TRAINING > Cycle Creation (WIDGET)
+# 	first =  CharField(max_length=50, null=True)
+# 	last = CharField(max_length=50, null=True)
+# 	#quick analysis
+# 	se1rm = DecimalField(max_digits=3, decimal_places=2, null=True)
+# 	be1rm = DecimalField(max_digits=3, decimal_places=2, null=True)
+# 	de1rm = DecimalField(max_digits=3, decimal_places=2, null=True)
+
+	def __str__(self):
+		return "%s %s" % ("Reached", "This point")	
+
 
 #TRAINING > Latest Creation
 class CycleCreate(models.Model):
 	live = CharField(max_length = 3, choices = live_choices, default='no')
-	first =  CharField(max_length=50, null=True)
-	last = CharField(max_length=50, null=True)
+	client = models.ForeignKey(PersonalInfo, on_delete=models.CASCADE, null=True)
 	#cycle details
 	cyclename = CharField(max_length=50, null=True)
 	startdate = DateField(null=True)

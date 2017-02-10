@@ -35,8 +35,8 @@
     "model": "Lfit.PersonalInfo",
     "pk": 3,
     "fields": {
-      "first": "Michel",
-      "last": "Baston",
+      "first": "Michael",
+      "last": "Scott",
       "dob": "1985-02-09",
       "age": "35",
       "gender": "m",
@@ -83,8 +83,7 @@
     "model": "Lfit.CompResults",
     "pk": 1,
     "fields": {
-      "first": "Jimmy",
-      "last": "Cheong",
+      "client":1,
       "compdate": "2016-02-05",
       "compname": "24",
       "complocation": "bethnal green",
@@ -107,8 +106,7 @@
     "model": "Lfit.CompResults",
     "pk": 2,
     "fields": {
-      "first": "Louie",
-      "last": "Pelicano",
+      "client":2, 
       "compdate": "2016-03-08",
       "compname": "16",
       "complocation": "cambridge cupic",
@@ -131,8 +129,7 @@
     "model": "Lfit.CompResults",
     "pk": 3,
     "fields": {
-      "first": "Ben",
-      "last": "Dover",
+      "client":3,
       "compdate": "2014-11-21",
       "compname": "39",
       "complocation": "northampton",
@@ -155,8 +152,7 @@
     "model": "Lfit.CompResults",
     "pk": 4,
     "fields": {
-      "first": "Chris",
-      "last": "Peacock",
+      "client":4,
       "compdate": "2016-02-05",
       "compname": "19",
       "complocation": "bethnal green",
@@ -179,8 +175,7 @@
     "model": "Lfit.CompResults",
     "pk": 5,
     "fields": {
-      "first": "Annie",
-      "last": "Bodie",
+      "client":5,
       "compdate": "2016-02-05",
       "compname": "50",
       "complocation": "bethnal green",
@@ -204,8 +199,7 @@
     "pk": 1,
     "fields": {
       "paymentdate": "2016-02-01",
-      "first": "Bill",
-      "last": "Board",
+      "client": 1,
       "cyclename": "OFF111111",
       "payplan": "14",
       "weeks": "5",
@@ -219,8 +213,7 @@
     "pk": 2,
     "fields": {
       "paymentdate": "2016-02-02",
-      "first": "Lou",
-      "last": "Tennant",
+      "client": 2,
       "cyclename": "TRA035416",
       "payplan": "14",
       "weeks": "4",
@@ -234,8 +227,7 @@
     "pk": 3,
     "fields": {
       "paymentdate": "2016-02-03",
-      "first": "Chris",
-      "last": "Mass",
+      "client": 3,
       "cyclename": "TRA201216",
       "payplan": "14",
       "weeks": "4",
@@ -249,8 +241,7 @@
     "pk": 4,
     "fields": {
       "paymentdate": "2016-02-04",
-      "first": "Joe",
-      "last": "King",
+      "client": 3,
       "cyclename": "PEA311116",
       "payplan": "14",
       "weeks": "4",
@@ -264,8 +255,7 @@
     "pk": 5,
     "fields": {
       "paymentdate": "2016-02-05",
-      "first": "Jack",
-      "last": "Pott",
+      "client": 4,
       "cyclename": "PEA091216",
       "payplan": "14",
       "weeks": "10",
@@ -279,8 +269,7 @@
     "pk": 1,
     "fields": {
       "live": "y",
-      "first": "Peter",
-      "last": "Pan",
+      "client":1,
       "startdate": "2016-06-16",
       "enddate": "2016-08-31",
       "trainingtype": "t",
@@ -346,8 +335,7 @@
     "pk": 2,
     "fields": {
       "live": "n",
-      "first": "Jimmy",
-      "last": "Cheong",
+      "client":2,
       "startdate": "2016-03-29",
       "enddate": "2016-08-01",
       "trainingtype": "o",

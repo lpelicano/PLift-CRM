@@ -20,7 +20,7 @@ class PersonalInfoForm(forms.ModelForm):
 class CompResultsForm(forms.ModelForm):
 	class Meta:
 		model = CompResults
-		fields = ['first', 'last', 'compdate', 'compname', 
+		fields = ['client', 'compdate', 'compname', 
 		'complocation', 'bodyweight', 'weightclass', 'sq1', 
 		'sq2', 'sq3', 'bp1', 'bp2', 'bp3', 'dl1', 'dl2', 'dl3', 
 		'comptotal', 'wilks']
@@ -32,7 +32,7 @@ class CompResultsForm(forms.ModelForm):
 class PaymentsForm(forms.ModelForm):
 	class Meta:
 		model = Payments
-		fields = ['paymentdate', 'first', 'last', 'cyclename',
+		fields = ['paymentdate','client', 'cyclename',
 		'payplan', 'weeks', 'totaltopay', 'paid', 'paymentmethod']
 
 #===#===#===#===#===#===#
@@ -42,7 +42,7 @@ class PaymentsForm(forms.ModelForm):
 class CycleCreateForm(forms.ModelForm):
 	class Meta:
 		model = CycleCreate
-		fields = ['first', 'last', 'startdate', 'enddate',
+		fields = ['client', 'startdate', 'enddate',
 		'trainingtype', 'days', 'weeks', 'sslots', 'bslots',
 		'dslots', 'spctot', 'bpcttot', 'dpcttot', 'smpct', 
 		'svpct', 'sspct', 'bmpct', 'bv1pct', 'bv2pct', 'bs1pct',
