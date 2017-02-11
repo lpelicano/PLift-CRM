@@ -23,12 +23,29 @@ class CustomView(TemplateView):
 				query_payments = Payments.objects.all()
 				context = {'query_personal':query_personal, 'query_comp':query_comp, 'query_payments':query_payments}
 				return render(request, self.template_name, context)
+
 		if self.template_name == 'Lfit/training.html':
 				query_live = CycleCreate.objects.filter(live='y')
 				query_pending = CycleCreate.objects.filter(live='n')
 				context = {'query_live':query_live, 'query_pending':query_pending}
 				return render(request, self.template_name, context) 
+
 		return render(request, self.template_name)
+
+	def post(self, request):
+
+		if self.template_name == 'Lfit/training.html':
+			print("REQUEST: " , request.POST)
+			print(request.POST['cycle'])
+			cycle = CycleCreate.objects.get(cyclename = request.POST['cycle'])			
+			print ('live: ' , cycle.live)
+			if cycle.live == 'y':
+				cycle.live = 'n'
+			else:
+				cycle.live = 'y'
+			cycle.save()
+
+		return redirect("/account/training")
 
 def research(request): 
 	# plt,fig,ax,figure = Main.plotgraph()

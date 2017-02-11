@@ -270,6 +270,7 @@
     "fields": {
       "live": "y",
       "client":1,
+      "cyclename":"CY001",
       "startdate": "2016-06-16",
       "enddate": "2016-08-31",
       "trainingtype": "t",
@@ -336,6 +337,7 @@
     "fields": {
       "live": "n",
       "client":2,
+      "cyclename": "CY002",
       "startdate": "2016-03-29",
       "enddate": "2016-08-01",
       "trainingtype": "o",

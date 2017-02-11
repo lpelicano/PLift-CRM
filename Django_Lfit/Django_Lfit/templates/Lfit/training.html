@@ -4,6 +4,7 @@
 {% block head%}
     <title>Admin-Training</title>
     <link rel="stylesheet" href="{% static 'clients.css' %}">
+    <link rel="stylesheet" href="{% static 'training.css' %}">
 {% endblock head%}
 
 {% block body %}
@@ -20,7 +21,7 @@
 
 <!--    CONTENT    -->        
     <div class="AtheletePage">
-        <div id="cycleCreation" class="tabcontent" style="display:block">
+        <div id="cycleCreation" class="tabcontent">
             
             <!--    CONTENT    -->        
             <!-- First Line -->
@@ -130,7 +131,7 @@
             </div>
         </div>            
 
-        <div id="liveCycle" class="tabcontent">
+        <div id="liveCycle" class="tabcontent" style="display:block">
          
             <div class="upperwidgets">
                 <div class="container currentCycleTotal">
@@ -147,10 +148,9 @@
 
 <!--     Standard info       -->
             
-            <th>First</th>
-            <th>Last</th>
+            <th>Client</th>
 
-            <th>Cycle Name</th>
+            <th><a></a>Cycle Name</th>
             <th>Start Date</th>
             <th>End Date</th>
             <th>Training Type</th>
@@ -222,13 +222,11 @@
 <!--  Extracted records using for loop  -->
         {% for q in query_live %}
 
-        <tr>
+        <tr id="{{q.client}}">
             
     <!--     Standard info       -->
-            
-            <td>{{q.first}}</td>
-            <td>{{q.last}}</td>
-            <td>{{q.cyclename}}</td>
+            <td>{{q.client}}</td>
+            <td><a href="javascript:void(0)" class="tablinks" onclick="selectLiveCycle(event, '{{q.client}}','{{q.cyclename}}')">{{q.cyclename}}</a></td>
             <td>{{q.startdate}}</td>
             <td>{{q.enddate}}</td>
             <td>{{q.trainingtype}}</td>
@@ -302,17 +300,21 @@
             <td>{{q.dmAmov}}</td>
             <td>{{q.dvAmov}}</td>
             <td>{{q.dsAmov}}</td>
-
         </tr>
+
         {% endfor %}
         </table>
             </div>
             
             <div class="buttonsCenter">
                 <div class="LCButtons">
-                <button type="button"> Migrate </button>
-                <button type="button"> Remove </button>    
-                <button type="button"> Refresh </button>     
+                <form action="/account/training" method="post" onsubmit="return checkLiveValid()" id="liveform">
+                    {% csrf_token %}
+                    <input type="submit" value="Migrate">
+                    <input type="hidden" name="cycle" value="" id="liveinput">
+                    <button type="button"> Remove </button>    
+                    <button type="button"> Refresh </button>  
+                </form>
                 </div>
             </div>
         </div>
@@ -333,8 +335,7 @@
 
 <!--     Standard info       -->
             
-            <th>First</th>
-            <th>Last</th>
+            <th>Client</th>
 
             <th>Cycle Name</th>
             <th>Start Date</th>
@@ -408,13 +409,12 @@
 <!--  Extracted records using for loop  -->
         {% for q in query_pending %}
 
-        <tr>
+        <tr id="{{q.client}}">
             
     <!--     Standard info       -->
             
-            <td>{{q.first}}</td>
-            <td>{{q.last}}</td>
-            <td>{{q.cyclename}}</td>
+            <td>{{q.client}}</td>
+            <td><a href="javascript:void(0)" class="tablinks" onclick="selectPendingCycle(event, '{{q.client}}','{{q.cyclename}}')">{{q.cyclename}}</a></td>
             <td>{{q.startdate}}</td>
             <td>{{q.enddate}}</td>
             <td>{{q.trainingtype}}</td>
@@ -496,9 +496,13 @@
             
             <div class="buttonsCenter">
                 <div class="LCButtons">
-                <button type="button"> Migrate </button>
-                <button type="button"> Remove </button>    
-                <button type="button"> Refresh </button>     
+                <form action="/account/training" method="post" onsubmit="return checkPendingValid()" id="pendingform">
+                    {% csrf_token %}
+                    <input type="submit" value="Migrate">
+                    <input type="hidden" name="cycle" value="" id="pendinginput">
+                    <button type="button"> Remove </button>    
+                    <button type="button"> Refresh </button>  
+                </form>    
                 </div>
             </div>
         </div>
@@ -511,6 +515,8 @@
     
 
 <!--    JavaScript    -->
+
+<!-- Tab selection -->
     <script>
         function openCity(evt, cityName) {
         // Declare all variables
@@ -533,6 +539,53 @@
         evt.currentTarget.className += " active";
         }    
     </script>
+
+<!-- Select a live cycle selection -->
+    <script> 
+        function selectLiveCycle(evt, tableRecord,cycleName) {
+            var x = document.getElementById(tableRecord);
+            for (i = 0; i < x.children.length;i++){
+                x.children[i].className = "selectedRecord";
+            }
+
+            //    Change the value of the hidden <input> tag within the form tag for the POST request
+            document.getElementById("liveinput").value = cycleName;
+        }
+
+        function selectPendingCycle(evt, tableRecord,cycleName) {
+            var x = document.getElementById(tableRecord);
+            for (i = 0; i < x.children.length;i++){
+                x.children[i].className = "selectedRecord";
+            }
+
+            //    Change the value of the hidden <input> tag within the form tag for the POST request
+            document.getElementById("pendinginput").value = cycleName;
+        }
+        
+
+//    CHECKS IF ANY LIVE CYCLES ARE SELECTED
+        function checkLiveValid(evt){
+            console.log("Checking");
+            console.log(document.getElementById("liveinput").value);
+            if (document.getElementById("liveinput").value == ""){
+            return false
+        }
+    }
+
+//    CHECKS IF ANY PENDING CYCLES ARE SELECTED        
+        function checkPendingValid(evt){
+            console.log("Checking");
+            console.log(document.getElementById("pendinginput").value);
+            if (document.getElementById("pendinginput").value == ""){
+            return false
+        }
+    }
+        
+        
+    </script>
+
+
+<!-- Page selection -->
     <script>
         document.getElementById("training").style.backgroundColor = "#000000"
         document.getElementById("training").style.color = "white"

@@ -1,0 +1,17 @@
+td a {
+    color: black;
+}
+
+td a:hover {
+    
+    text-decoration: none;
+}
+
+td a:active {
+    text-decoration: none;
+}
+
+.selectedRecord {
+    background-color: rgb(63,81,181);
+    color: white;
+}
