@@ -15,7 +15,7 @@ urlpatterns = [
 
     url(r'^logout$', logout, {'template_name':'logout.html'}),
     url(r'^export$', views.export, name = 'export'),
-    url(r'^matty', views.mattyplot,name = 'matplotlib'),
+    # url(r'^matty', views.mattyplot,name = 'matplotlib'),
 
     url(r'^personalinput$', views.personalinput, name = 'personalinput'),
     url(r'^compresultsinput$', views.compresultsinput, name = 'compresultsinput'),

@@ -45,7 +45,7 @@ class CustomView(TemplateView):
 				cycle.live = 'y'
 			cycle.save()
 
-		return redirect("/account/training")
+			return redirect("/account/training")
 
 def research(request): 
 	# plt,fig,ax,figure = Main.plotgraph()
@@ -69,9 +69,6 @@ def login_redirect(request):
 #
 #===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#
 #===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#
-
-def mattyplot(request):
-	return render(request, 'Lfit/matty.html') 
 
 
 def export(request):
