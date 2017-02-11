@@ -1,9 +1,14 @@
 from . import views
+from .views import CustomView
 from django.conf.urls import url
 from django.contrib.auth.views import login, logout
-from .views import CustomView
+
+from django.contrib.auth.decorators import login_required
+from Lfit.forms import CustomLoginForm as CLF
+
 
 urlpatterns = [
+
     url(r'^home$', CustomView.as_view(template_name = 'Lfit/index.html')),
     url(r'^clients$', CustomView.as_view(template_name = 'Lfit/clients.html')),
     url(r'^calendar$', CustomView.as_view(template_name = 'Lfit/calendar.html')),
@@ -11,9 +16,6 @@ urlpatterns = [
     url(r'^research$', views.research), 
     # url(r'^research$', CustomView.as_view(template_name = 'Lfit/research.html')),
     url(r'^forms_nav$', CustomView.as_view(template_name = 'Lfit/forms_nav.html')),    
-    url(r'^login$', login, {'template_name':'login.html'}),
-
-    url(r'^logout$', logout, {'template_name':'logout.html'}),
     url(r'^export$', views.export, name = 'export'),
     # url(r'^matty', views.mattyplot,name = 'matplotlib'),
 
@@ -23,6 +25,16 @@ urlpatterns = [
     url(r'^cyclecreateinput$', views.cyclecreateinput, name = 'cyclecreatinput'),
 
     url(r'^research2$', views.line_graph),
+
+#====#=====#====# Login URLs #====#=====#====#=====#
+
+    url(r'^login$', login, {'template_name':'Lfit/login.html'}),
+    url(r'^logout$', logout, {'template_name':'Lfit/logout.html'}),
+
+
+    #url(r'^home$', login_required(CustomView.as_view(template_name = 'Lfit/index.html'))),
+
+
 
 #====#=====#====# Advanced Form URLs #====#=====#====#=====#
 

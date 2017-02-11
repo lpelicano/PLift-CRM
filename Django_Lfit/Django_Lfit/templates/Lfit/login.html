@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+
+{% block head %}
+	<title>Admin-Login</title>
+<!--
+    <link rel="stylesheet" href="{% static 'auth.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+-->
+{% endblock head %}
+
+{% block body %}
+<div class="container">
+	<br>
+	<form class="form-signin" method="post">
+	   <h1 class="form-signin-header"> Admin login </h1>
+		{% csrf_token %}
+
+		<div class="" type="password">{{ form.as_p }}</div>
+
+		<button type="submit">login</button>
+	</form>
+</div>
+{% endblock body %}

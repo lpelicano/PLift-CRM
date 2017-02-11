@@ -2,6 +2,9 @@ from django import forms
 from Lfit.models import PersonalInfo, CompResults, Payments, CycleCreate 
 # from django.forms import CharField, DateField, IntegerField, ChoiceField, DecimalField
 
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.models import User
+
 #===#===#===#===#===#===#
 # Clients
 #===#===#===#===#===#===#
@@ -53,5 +56,17 @@ class CycleCreateForm(forms.ModelForm):
 		'bs1mov', 'bs2mov', 'dmmov', 'dvmov', 'dsmov', 'smAmov', 
 		'svAmov', 'ssAmov', 'bmAmov', 'bv1Amov', 'bv2Amov',
 		'bs1Amov', 'bs2Amov', 'dmAmov', 'dvAmov', 'dsAmov',]
+
+class CustomLoginForm(AuthenticationForm):
+	class Meta: 
+		model = User
+
+	def __init__(self, *args, **kwargs):
+		super(MyForm, self).__init__(*args, **kwargs)
+		self.fields['username'].widget.attrs.update({'class' : 'myfieldclass'})
+		self.fields['password'].widget.attrs.update({'class' : 'myfieldclass'})
+
+
+
 
 

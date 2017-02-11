@@ -14,14 +14,17 @@ from mpld3 import fig_to_html
 #from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas 
 
 
+#@login_required
 class CustomView(TemplateView):
+
+
 
 	def get(self, request): 
 		if self.template_name == 'Lfit/clients.html':
 				query_personal = PersonalInfo.objects.all()
 				query_comp = CompResults.objects.all()
 				query_payments = Payments.objects.all()
-				context = {'query_personal':query_personal, 'query_comp':query_comp, 'query_payments':query_payments}
+				context = {'query_personal':query_personal, 'query_comp':query_comp, 'query_payments':query_payments, 'user':request.user}
 				return render(request, self.template_name, context)
 
 		if self.template_name == 'Lfit/training.html':
