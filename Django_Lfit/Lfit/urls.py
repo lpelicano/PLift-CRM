@@ -9,13 +9,13 @@ from Lfit.forms import CustomLoginForm as CLF
 
 urlpatterns = [
 
-    url(r'^home$', CustomView.as_view(template_name = 'Lfit/index.html')),
-    url(r'^clients$', CustomView.as_view(template_name = 'Lfit/clients.html')),
-    url(r'^calendar$', CustomView.as_view(template_name = 'Lfit/calendar.html')),
-    url(r'^training$', CustomView.as_view(template_name = 'Lfit/training.html')),
-    url(r'^research$', views.research), 
+    url(r'^home$', CustomView.as_view(template_name = 'Lfit/index.html'), name="home"),
+    url(r'^clients$', CustomView.as_view(template_name = 'Lfit/clients.html'), name="clients"),
+    url(r'^calendar$', CustomView.as_view(template_name = 'Lfit/calendar.html'), name="calendar"),
+    url(r'^training$', CustomView.as_view(template_name = 'Lfit/training.html'), name="training"),
+    url(r'^research$', views.research, name="research"), 
     # url(r'^research$', CustomView.as_view(template_name = 'Lfit/research.html')),
-    url(r'^forms_nav$', CustomView.as_view(template_name = 'Lfit/forms_nav.html')),    
+    url(r'^forms_nav$', CustomView.as_view(template_name = 'Lfit/forms_nav.html'), name="forms_nav"),    
     url(r'^export$', views.export, name = 'export'),
     # url(r'^matty', views.mattyplot,name = 'matplotlib'),
 
@@ -31,10 +31,7 @@ urlpatterns = [
     url(r'^login$', login, {'template_name':'Lfit/login.html'}, name = "login"),
     url(r'^logout$', logout, {'template_name':'Lfit/logout.html'}, name="logout"),
 
-
     #url(r'^home$', login_required(CustomView.as_view(template_name = 'Lfit/index.html'))),
-
-
 
 #====#=====#====# Advanced Form URLs #====#=====#====#=====#
 

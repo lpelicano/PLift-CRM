@@ -195,3 +195,47 @@ def calendarpage(request):
 # 		obj = form.save(commit = False)
 # 		obj.save()
 # 		return redirect('/account/home')
+
+
+#====#====##====#====##====#====##====#====#
+# REGISTRATION FORM DEVELOPMENT
+#====#====##====#====##====#====##====#====#
+
+from django.shortcuts import render, HttpResponseRedirect
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
+from .models import UserProfile
+from Lfit.forms import UserProfileForm
+from django.forms.models import inlineformset_factory
+from django.core.exceptions import PermissionDenied
+
+@login_required
+def edit_user(request, pk):
+    user = User.objects.get(pk=pk)
+    user_form = UserProfileForm(instance=user)
+ 
+    ProfileInlineFormset = inlineformset_factory(User, UserProfile, fields=('phone', 'city', 'organization'))
+    formset = ProfileInlineFormset(instance=user)
+
+    if request.user.is_authenticated() and request.user.id == user.id:
+        print ("authenicated")
+        if request.method == "POST":
+            user_form = UserProfileForm(request.POST, request.FILES, instance=user)
+            formset = ProfileInlineFormset(request.POST, request.FILES, instance=user)
+ 
+            if user_form.is_valid():
+                created_user = user_form.save(commit=False)
+                formset = ProfileInlineFormset(request.POST, request.FILES, instance=created_user)
+ 
+                if formset.is_valid():
+                    created_user.save()
+                    formset.save()
+                    return HttpResponseRedirect('/account/home')
+ 
+        return render(request, "Lfit/update_info.html", {
+            "noodle": pk,
+            "noodle_form": user_form,
+            "formset": formset,
+        })
+    else:
+        raise PermissionDenied
