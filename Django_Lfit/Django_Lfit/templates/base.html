@@ -5,7 +5,6 @@
 <html>
     <head>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<!--        <link rel=stylesheet type=text/css href="styles.css">-->
         <link rel="stylesheet" href="{% static 'styles.css' %}">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         
@@ -14,7 +13,7 @@
             <title>NO TITLE</title>
         {% endblock head%}
     </head>
-    <body>
+    <body style="background-color: rgb(64,163,91);">
         <div> 
             {% if user.is_authenticated %}
             <ul class="tab">
@@ -24,6 +23,9 @@
                 <li class="tablinks"><a href="calendar" id='calendar_nav'>Calendar</a></li>
                 <li class="tablinks"><a href="research" id='research'>Research</a></li>
                 <li class="tablinks"><a href="forms_nav" id='forms_nav'>Forms</a></li>
+                
+                <li class="tablinks" style="float:right; margin-right:10px"><a href="logout" id="logout" >Logout</a></li>
+                
             </ul>   
             {% endif %}
         </div>

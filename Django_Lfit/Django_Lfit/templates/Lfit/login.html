@@ -1,25 +1,28 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 
+{% load bootstrap3 %}
+
 
 {% block head %}
 	<title>Admin-Login</title>
-<!--
     <link rel="stylesheet" href="{% static 'auth.css' %}">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
--->
+
 {% endblock head %}
 
 {% block body %}
-<div class="container">
+<div class="container customform">
 	<br>
-	<form class="form-signin" method="post">
+	<form action="{% url 'auth:login' %}" class="form-signin" method="post" style="color:white;">
 	   <h1 class="form-signin-header"> Admin login </h1>
+        <br>
 		{% csrf_token %}
-
-		<div class="" type="password">{{ form.as_p }}</div>
-
-		<button type="submit">login</button>
+		{% bootstrap_form form layout='inline' %}
+        {% buttons %}
+        
+		<button type="submit" class="btn btn-primary">{% bootstrap_icon "user" %} Login </button>
+        
+      {% endbuttons %}
 	</form>
 </div>
 {% endblock body %}

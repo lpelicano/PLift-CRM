@@ -1,6 +1,16 @@
-.form-signin {
-    max-width: 330px;
-    padding: 15px;
-    margin: 0 auto;
+.customform { 
+
+    text-align: center;
+    font-family: sans-serif;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width:30%;
+    
 }
 
+p {
+    color: white;
+    
+}

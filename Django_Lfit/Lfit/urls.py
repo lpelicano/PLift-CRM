@@ -28,8 +28,8 @@ urlpatterns = [
 
 #====#=====#====# Login URLs #====#=====#====#=====#
 
-    url(r'^login$', login, {'template_name':'Lfit/login.html'}),
-    url(r'^logout$', logout, {'template_name':'Lfit/logout.html'}),
+    url(r'^login$', login, {'template_name':'Lfit/login.html'}, name = "login"),
+    url(r'^logout$', logout, {'template_name':'Lfit/logout.html'}, name="logout"),
 
 
     #url(r'^home$', login_required(CustomView.as_view(template_name = 'Lfit/index.html'))),
