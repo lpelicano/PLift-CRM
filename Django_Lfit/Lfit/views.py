@@ -13,11 +13,8 @@ import numpy as np
 from mpld3 import fig_to_html
 #from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas 
 
-
 #@login_required
 class CustomView(TemplateView):
-
-
 
 	def get(self, request): 
 		if self.template_name == 'Lfit/clients.html':
@@ -30,9 +27,9 @@ class CustomView(TemplateView):
 		if self.template_name == 'Lfit/training.html':
 				query_live = CycleCreate.objects.filter(live='y')
 				query_pending = CycleCreate.objects.filter(live='n')
-				context = {'query_live':query_live, 'query_pending':query_pending}
+				context = {'query_live':query_live, '`query_pending':query_pending}
 				return render(request, self.template_name, context) 
-
+		print('Template name: ', self.template_name)
 		return render(request, self.template_name)
 
 	def post(self, request):
@@ -63,7 +60,6 @@ def line_graph(request):
 
 def login_redirect(request):
 	return redirect('/account/login')
-
 
 #===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#
 #===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#

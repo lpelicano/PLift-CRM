@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% load bootstrap3 %}
+
+
+{% block head %}
+	<title>Lfit</title>
+    <link rel="stylesheet" href="{% static 'auth.css' %}">
+
+{% endblock head %}
+
+{% block body %}
+<div class="container customform">
+	<br>
+	<form action="{% url 'user:login' %}" class="form-signin" method="post" style="color:white;">
+	   <h1 class="form-signin-header"> Lfit </h1>
+            <br>
+        <p style="text-align: center">Please log in</p>
+        <br>
+		{% csrf_token %}
+		{% bootstrap_form form layout='inline' %}
+        {% buttons %}
+        
+		<button type="submit" class="btn btn-primary">{% bootstrap_icon "user" %} Login </button>
+        
+      {% endbuttons %}
+	</form>
+</div>
+{% endblock body %}
