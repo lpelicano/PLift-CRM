@@ -1,5 +1,5 @@
 from . import views
-from .views import CustomView, login_client
+from .views import CustomView, login_client, logout_client
 from django.conf.urls import url
 from django.contrib.auth.views import login, logout
 from django.contrib.auth.decorators import login_required
@@ -14,7 +14,7 @@ urlpatterns = [
 #====#=====#====# Login URLs #====#=====#====#=====#
 
     url(r'^login$', login_client, name = "login"),
-    url(r'^logout$', logout, {'template_name':'Client/logout.html'}, name="logout"),
+    url(r'^logout$', logout_client, name="logout"),
 
     #url(r'^home$', login_required(CustomView.as_view(template_name = 'Lfit/index.html'))),
 ]
