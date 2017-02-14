@@ -16,7 +16,7 @@
 	<form action="{% url 'user:login' %}" class="form-signin" method="post" style="color:white;">
 	   <h1 class="form-signin-header"> Lfit </h1>
             <br>
-        <p style="text-align: center">Please log in</p>
+        <p style="text-align: center">{{state}}</p>
         <br>
 		{% csrf_token %}
 		{% bootstrap_form form layout='inline' %}

@@ -3,17 +3,17 @@
 
 
 {% block head %}
-	<title>Admin-Logout</title>
+	<title>Logout</title>
     <link rel="stylesheet" href="{% static 'auth.css' %}">
 
 {% endblock head %}
 
 {% block body %}
 <div class="container customform">
-	<h1 style="color:white;"> Logged out of Admin! </h1>
+	<h1 style="color:white;"> You're outta here! </h1>
 	<br><br>
-	<p> Successfully logged out from admin account </p>
+	<p> Successfully logged out from your account </p>
     <br><br>
-    <p style="color:white;"><a href="login">login</a></p>
+    <p style="color:white;"><a href="{% url 'user:login' %}">login</a></p>
 </div>
 {% endblock body %}

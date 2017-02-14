@@ -47,31 +47,30 @@ from django.template import RequestContext
 
 def login_client(request):
 
-	username=''
-	password=''
-	context = {}
-
-	print ('LOGIN_CLIENT METHOD')
+	state = "Please login"
 
 	if request.method == "POST" :
 		username = request.POST['username']
 		password = request.POST['password']
 		user = authenticate(username=username, password=password)
 		if user is not None:
-			print('User:', user)
+			#===LOGIN CREDENTIALS were successful===#
 			login(request, user)
 			return redirect("/user/dashboard")
 
 			#=====≠#  CUSTOM URL FOR UNIQUE USER #======#
 			# return redirect("/%s/dashboard" % user)
-	else:
-		print ('REACHED')
-		form = CustomLoginForm()
-		return render(request,"Client/login.html", {"form":form})
 
+		else:
+			#===LOGIN CREDENTIALS have failed===#
+			state = "Your name or password is not correct. Please try again"
 
+	form = CustomLoginForm()
+	return render(request,"Client/login.html", {"form":form,"state":state})
 
-
+def logout_client(request):
+	logout(request)
+	return render(request, "Client/logout.html")
 
 
 
