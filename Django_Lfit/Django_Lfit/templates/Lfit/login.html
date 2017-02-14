@@ -13,7 +13,7 @@
 {% block body %}
 <div class="container customform">
 	<br>
-	<form action="{% url 'auth:login' %}" class="form-signin" method="post" style="color:white;">
+	<form action="{% url 'auth:login' %}" class="form-signin" method="post">
 	   <h1 class="form-signin-header"> Admin login </h1>
         <br>
 		{% csrf_token %}

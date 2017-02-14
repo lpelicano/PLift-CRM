@@ -1,21 +1,23 @@
-td {
-    color:orange;
-}
-
 td a {
     color: black;
 }
 
 td a:hover {
-    
+    color: black;
     text-decoration: none;
 }
 
 td a:active {
     text-decoration: none;
+    color:black;
 }
 
 .selectedRecord {
-    background-color: rgb(63,81,181);
-    color: white;
+    background-color:#ccff99;
+    color: black;
+}
+
+th {
+    background-color: black;
+    color:white;
 }

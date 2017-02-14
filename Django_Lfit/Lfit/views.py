@@ -27,7 +27,7 @@ class CustomView(TemplateView):
 		if self.template_name == 'Lfit/training.html':
 				query_live = CycleCreate.objects.filter(live='y')
 				query_pending = CycleCreate.objects.filter(live='n')
-				context = {'query_live':query_live, '`query_pending':query_pending}
+				context = {'query_live':query_live, 'query_pending':query_pending}
 				return render(request, self.template_name, context) 
 		print('Template name: ', self.template_name)
 		return render(request, self.template_name)

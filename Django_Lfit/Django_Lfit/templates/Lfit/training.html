@@ -143,7 +143,7 @@
             </div>
             
         <div class="lowertables" style="overflow-x:auto;">            
-        <table class="table_css" align="center">
+        <table class="table table-hover table-striped">
         <tr>
 
 <!--     Standard info       -->
@@ -308,13 +308,14 @@
             
             <div class="buttonsCenter">
                 <div class="LCButtons">
-                <form action="/account/training" method="post" onsubmit="return checkLiveValid()" id="liveform">
+                <form action="{% url 'auth:training' %}" method="post" onsubmit="return checkLiveValid()" id="liveform">
                     {% csrf_token %}
-                    <input type="submit" value="Migrate">
+                    <input type="submit" value="Migrate" class="btn btn-primary">
                     <input type="hidden" name="cycle" value="" id="liveinput">
-                    <button type="button"> Remove </button>    
-                    <button type="button"> Refresh </button>  
-                </form>
+                    <button type="button" class="btn btn-danger"> Remove </button>    
+                    <button type="button" class="btn btn-info"> Refresh </button>  
+                </form>    
+                    
                 </div>
             </div>
         </div>
@@ -330,7 +331,7 @@
             </div>
             
         <div class="lowertables" style="overflow-x:auto;">            
-        <table class="table_css" align="center">
+        <table class="table table-hover table-striped">
         <tr>
 
 <!--     Standard info       -->
@@ -496,12 +497,12 @@
             
             <div class="buttonsCenter">
                 <div class="LCButtons">
-                <form action="/account/training" method="post" onsubmit="return checkPendingValid()" id="pendingform">
+                <form action="{% url 'auth:training' %}" method="post" onsubmit="return checkPendingValid()" id="pendingform">
                     {% csrf_token %}
-                    <input type="submit" value="Migrate">
+                    <input type="submit" value="Migrate" class="btn btn-primary">
                     <input type="hidden" name="cycle" value="" id="pendinginput">
-                    <button type="button"> Remove </button>    
-                    <button type="button"> Refresh </button>  
+                    <button type="button" class="btn btn-danger"> Remove </button>    
+                    <button type="button" class="btn btn-info"> Refresh </button>  
                 </form>    
                 </div>
             </div>

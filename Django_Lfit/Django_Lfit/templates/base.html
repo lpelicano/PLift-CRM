@@ -1,9 +1,11 @@
 <!doctype html> 
 
 {% load staticfiles %}
+<!--
 {% include 'material/includes/material_css.html' %}
 <script src="{% static 'material/js/jquery-2.2.0.js' %}"></script>
 {% include 'material/includes/material_js.html' %}
+-->
 
 
 <html>
@@ -17,7 +19,8 @@
             <title>NO TITLE</title>
         {% endblock head%}
     </head>
-    <body style="background-color: rgb(64,163,91);">
+<!--    <body>-->
+    <body style="background-color: #DFDCE3;">
         <div> 
             {% if user.is_authenticated %}
             <ul class="tab">

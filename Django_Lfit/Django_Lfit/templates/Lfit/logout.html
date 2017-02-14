@@ -10,10 +10,10 @@
 
 {% block body %}
 <div class="container customform">
-	<h1 style="color:white;"> Logged out of Admin! </h1>
+	<h1 style=""> Logged out of Admin! </h1>
 	<br><br>
 	<p> Successfully logged out from admin account </p>
     <br><br>
-    <p style="color:white;"><a href="login">login</a></p>
+    <p><a href="{% url 'auth:login' %}">login</a></p>
 </div>
 {% endblock body %}
