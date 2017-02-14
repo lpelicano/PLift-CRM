@@ -1,19 +1,19 @@
-{% extends 'base.html' %}
+<!doctype html> 
 {% load staticfiles %}
-
 {% load bootstrap3 %}
 
-
-{% block head %}
-	<title>Lfit</title>
+<head>
+    <title>Lfit</title>
     <link rel="stylesheet" href="{% static 'auth.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="{% static 'cbstyles.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+</head>
 
-{% endblock head %}
-
-{% block body %}
-<div class="container customform">
+<body>
+<div class="container-fixed customform">
 	<br>
-	<form action="{% url 'user:login' %}" class="form-signin" method="post" style="color:white;">
+	<form action="{% url 'user:login' %}" class="form-signin" method="post" style="">
 	   <h1 class="form-signin-header"> Lfit </h1>
             <br>
         <p style="text-align: center">{{state}}</p>
@@ -27,4 +27,4 @@
       {% endbuttons %}
 	</form>
 </div>
-{% endblock body %}
+</body>

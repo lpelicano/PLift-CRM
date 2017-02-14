@@ -22,7 +22,7 @@
           <h3>Personal Info.</h3>
           <p>This table displays personal information of all clients</p>
         
-            <div class="container-fixed">
+        <div class= "container-fixed table-responsive">
         <table class="table table-hover table-striped">
         <tr>
             <th>First</th>
@@ -59,7 +59,8 @@
         <div id="Competition" class="tabcontent">
           <h3>Competition Results </h3>
           <p>This table shows all competition results</p> 
-        <div style="overflow-x:auto;">
+        <div style="overflow-x:auto;" class="row">
+            <div class= "container table-responsive">
                 <table class="table table-hover table-striped">
                 <tr>
                     <th>Comp. Date</th>
@@ -107,6 +108,7 @@
                 </tr>
                 {% endfor %}
                 </table>
+            </div>
         </div>
         
         </div>
@@ -115,7 +117,7 @@
           <h3>Payments</h3>
           <p>This table shows current payments and plans</p>
 
-        <div class="container">
+        <div class= "container table-responsive">
                 <table class="table table-hover table-striped">
                 <tr>
                     <th>Pay Date</th>
