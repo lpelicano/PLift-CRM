@@ -13,18 +13,16 @@
 {% block body %}
     <div class="container" style="padding-left:50px; padding-top:40px;">
         
-        <h1>{{ userprofile }}</h1>
-        
-        
-        <image src="{{userprofile.profile_pic}}"></image>
-        
-        
-        <p>{{userprofile.email}}</p>
-        
-        <p>upload profile image here</p>
-        
-        <form>
-            <input type="file">
+        <h1>{{ userprofile }}</h1>    
+        <br>
+
+        <form action="{% url 'user:account' %}" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <p>Upload profile image here</p>
+                {% csrf_token %}
+                <input type="file">
+            </div>
+            <input type="submit" value="Upload" class="btn btn-primary">
         </form>
         
     </div>

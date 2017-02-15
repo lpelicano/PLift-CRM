@@ -1,17 +1,14 @@
 from django.shortcuts import render, redirect, reverse, render_to_response
 from django.contrib.auth.decorators import login_required
 
-from Lfit.models import PersonalInfo, CompResults, Payments, CycleCreate
-from Lfit.forms import PersonalInfoForm, CompResultsForm, PaymentsForm, CycleCreateForm  
+from Lfit.models import PersonalInfo
+
+
 from calendar import HTMLCalendar
 
 from django.views.generic import TemplateView
 from django.views.generic.edit import FormView
 
-from Lfit.graphs import Graph
-import numpy as np
-from mpld3 import fig_to_html
-#from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas 
 
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.models import User 
@@ -23,10 +20,11 @@ class CustomView(TemplateView):
 	def get(self, request): 
 
 		#TWO STEPS: Querying both models
-		user_id = User.objects.filter(username=request.user)[0]
-		print(user_id)
-		print(type(user_id))
-		user_profile = PersonalInfo.objects.filter(user=user_id)[0]
+		try: 
+			user_id = User.objects.filter(username=request.user)[0]
+			user_profile = PersonalInfo.objects.filter(user=user_id)[0]
+		except:
+			pass
 
 		if self.template_name == 'Client/dashboard.html':
 				context = {'user':request.user, 'userprofile':user_profile}
@@ -43,6 +41,15 @@ class CustomView(TemplateView):
 				return render(request, self.template_name, context)
 
 		return render(request, self.template_name)
+
+	def post(self,request): 
+
+		if self.template_name == "Client/account.html":
+			pass
+
+
+
+		return redirect("/user/account")
 
 
 #===##===##===##===##===##===##===#
