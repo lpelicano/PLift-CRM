@@ -18,7 +18,12 @@
         <p> CLIENT: {{ userprofile }}</p>
         
         
+
         <p> gender: {{ userprofile.gender }}</p>
+
+        <br>
+        
+        <img src="{{ userprofile.profile_pic.url }}" width=240>
         
     </div>
 {% endblock body%}

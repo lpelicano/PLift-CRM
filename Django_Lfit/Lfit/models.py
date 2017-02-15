@@ -43,7 +43,7 @@ class PersonalInfo(models.Model):
 	agecategory = CharField(max_length=50, null=True)
 	affiliatedivision = CharField(max_length=50, null=True)
 
-	profile_pic = ImageField(upload_to="uploads/", null=True)
+	profile_pic = ImageField(upload_to="profile_pic", null=True)
 
 	def __str__(self):
 		return "%s %s" % (self.first, self.last)

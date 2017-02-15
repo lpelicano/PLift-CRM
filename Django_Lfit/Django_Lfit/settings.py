@@ -126,5 +126,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'Django_Lfit', 'static'),
 )
 
+MEDIA_URL = 'Client/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'Client/media')
 
 LOGIN_REDIRECT_URL = "/account/home"

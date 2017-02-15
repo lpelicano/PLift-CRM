@@ -38,6 +38,10 @@ class CustomView(TemplateView):
 				context = {'query_live':query_live, '`query_pending':query_pending}
 				return render(request, self.template_name, context) 
 
+		if self.template_name == 'Client/account.html':
+				context = {'user':request.user, 'userprofile':user_profile}
+				return render(request, self.template_name, context)
+
 		return render(request, self.template_name)
 
 

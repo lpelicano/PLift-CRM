@@ -1,0 +1,31 @@
+{% extends "clientbase.html" %}
+{% load staticfiles %}
+{% load bootstrap3 %}
+
+{% block head%}
+    <title>Lfit Account</title>
+    <link rel="stylesheet" href="{% static 'dashboard.css' %}">
+{% endblock head%}
+
+{%block content%}
+{% endblock content%}
+
+{% block body %}
+    <div class="container" style="padding-left:50px; padding-top:40px;">
+        
+        <h1>{{ userprofile }}</h1>
+        
+        
+        <image src="{{userprofile.profile_pic}}"></image>
+        
+        
+        <p>{{userprofile.email}}</p>
+        
+        <p>upload profile image here</p>
+        
+        <form>
+            <input type="file">
+        </form>
+        
+    </div>
+{% endblock body%}

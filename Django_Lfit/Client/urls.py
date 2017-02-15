@@ -4,6 +4,9 @@ from django.conf.urls import url
 from django.contrib.auth.views import login, logout
 from django.contrib.auth.decorators import login_required
 
+from django.conf import settings
+from django.conf.urls.static import static
+
 urlpatterns = [
 
     url(r'^dashboard$', CustomView.as_view(template_name = 'Client/dashboard.html'), name="dashboard"),
@@ -17,4 +20,4 @@ urlpatterns = [
     url(r'^logout$', logout_client, name="logout"),
 
     #url(r'^home$', login_required(CustomView.as_view(template_name = 'Lfit/index.html'))),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
