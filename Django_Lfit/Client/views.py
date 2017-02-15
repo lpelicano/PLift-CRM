@@ -13,6 +13,8 @@ from django.views.generic.edit import FormView
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.models import User 
 
+from Client.forms import ImageUploadForm
+
 
 #@login_required
 class CustomView(TemplateView):
@@ -31,9 +33,7 @@ class CustomView(TemplateView):
 				return render(request, self.template_name, context)
 
 		if self.template_name == 'Client/training.html':
-				query_live = CycleCreate.objects.filter(live='y')
-				query_pending = CycleCreate.objects.filter(live='n')
-				context = {'query_live':query_live, '`query_pending':query_pending}
+				context = {}
 				return render(request, self.template_name, context) 
 
 		if self.template_name == 'Client/account.html':
@@ -45,9 +45,11 @@ class CustomView(TemplateView):
 	def post(self,request): 
 
 		if self.template_name == "Client/account.html":
-			pass
-
-
+			form = ImageUploadForm(request.POST,request.FILES)
+			if form.is_valid():
+				obj = PersonalInfo.objects.get(user=request.user)
+				obj.profile_pic = form.cleaned_data['image']
+				obj.save()
 
 		return redirect("/user/account")
 
