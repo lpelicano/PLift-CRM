@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, reverse, render_to_response
 from django.contrib.auth.decorators import login_required
 
-from Lfit.models import PersonalInfo, CompResults, Payments, CycleCreate
+from Lfit.models import PersonalInfo, CompResults, Payments, CycleCreate, UserProfile
 from Lfit.forms import PersonalInfoForm, CompResultsForm, PaymentsForm, CycleCreateForm  
 from calendar import HTMLCalendar
 
@@ -14,27 +14,29 @@ from mpld3 import fig_to_html
 #from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas 
 
 from django.contrib.auth import login, logout, authenticate
+from django.contrib.auth.models import User 
 
 
 #@login_required
 class CustomView(TemplateView):
 
 	def get(self, request): 
-		if self.template_name == 'Lfit/clients.html':
-				query_personal = PersonalInfo.objects.all()
-				query_comp = CompResults.objects.all()
-				query_payments = Payments.objects.all()
-				context = {'query_personal':query_personal, 'query_comp':query_comp, 'query_payments':query_payments, 'user':request.user}
+
+		#TWO STEPS: Querying both models
+		user_id = User.objects.filter(username=request.user)[0]
+		user_profile = UserProfile.objects.filter(user=user_id)[0]
+
+		if self.template_name == 'Client/dashboard.html':
+				context = {'user':request.user, 'userprofile':user_profile}
 				return render(request, self.template_name, context)
 
-		if self.template_name == 'Lfit/training.html':
+		if self.template_name == 'Client/training.html':
 				query_live = CycleCreate.objects.filter(live='y')
 				query_pending = CycleCreate.objects.filter(live='n')
 				context = {'query_live':query_live, '`query_pending':query_pending}
 				return render(request, self.template_name, context) 
 
 		return render(request, self.template_name)
-
 
 
 #===##===##===##===##===##===##===#

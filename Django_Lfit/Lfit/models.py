@@ -191,12 +191,17 @@ class UserProfile(models.Model):
 	city = CharField(max_length=100, default='', blank=True)
 	organization = models.CharField(max_length=100, default='', blank=True)
 
+	def __str__(self):
+		return self.user.username
+
 
 def create_profile(sender, **kwargs):
 	user = kwargs['instance']
 	if kwargs['created']:
 		user_profile = UserProfile(user=user)
 		user_profile.save()
+		# user_profile = UserProfile.objects.create(user=user)
+
 
 post_save.connect(create_profile, sender=User)
 
