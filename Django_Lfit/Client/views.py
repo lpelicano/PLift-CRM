@@ -74,25 +74,3 @@ def logout_client(request):
 	logout(request)
 	return render(request, "Client/logout.html")
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
