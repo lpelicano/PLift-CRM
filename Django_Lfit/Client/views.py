@@ -24,6 +24,8 @@ class CustomView(TemplateView):
 
 		#TWO STEPS: Querying both models
 		user_id = User.objects.filter(username=request.user)[0]
+		print(user_id)
+		print(type(user_id))
 		user_profile = UserProfile.objects.filter(user=user_id)[0]
 
 		if self.template_name == 'Client/dashboard.html':
