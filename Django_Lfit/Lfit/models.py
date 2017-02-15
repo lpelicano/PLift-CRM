@@ -1,5 +1,13 @@
 from django.db import models
-from django.db.models import CharField, DateField, IntegerField, TextField, EmailField, DecimalField, ForeignKey
+from django.db.models import (CharField, 
+															DateField, 
+															IntegerField, 
+															TextField, 
+															EmailField, 
+															DecimalField, 
+															ForeignKey,
+															ImageField,
+															)
 
 # Create your models here.
 
@@ -18,8 +26,12 @@ trainingtype_choices = (('t','TRAINING'), ('o', 'OFFSEASON'), ('p', 'PEAKING'),)
 #MAIN > Small Calendar (Widget)
 #MAIN > News
 
+from django.contrib.auth.models import User
+from django.db.models.signals import post_save
+
 #CLIENTS > Personal Info
 class PersonalInfo(models.Model):
+	user = models.OneToOneField(User, related_name='user')
 	first =  CharField(max_length=50, null=True)
 	last = CharField(max_length=50, null=True)
 	dob = DateField(null=True)
@@ -31,8 +43,23 @@ class PersonalInfo(models.Model):
 	agecategory = CharField(max_length=50, null=True)
 	affiliatedivision = CharField(max_length=50, null=True)
 
+	profile_pic = ImageField(upload_to="uploads/", null=True)
+
 	def __str__(self):
 		return "%s %s" % (self.first, self.last)
+
+def create_profile(sender, **kwargs):
+	user = kwargs['instance']
+	if kwargs['created']:
+		user_profile = PersonalInfo(user=user)
+		user_profile.save()
+		# user_profile = UserProfile.objects.create(user=user)
+
+post_save.connect(create_profile, sender=User)
+
+#======#≠========#=======##======#≠========#=======#
+#======#≠========#=======##======#≠========#=======#
+
 
 #CLIENTS > Competition=
 class CompResults(models.Model):
@@ -179,31 +206,37 @@ class AnalysisLatest(models.Model):
 #RESEARCH > Graphs
 
 #======#≠========#=======#
-# REGISTRATION FORM - Under development  
+# Model that is linked to user accounts   
 #======#≠========#=======#
 
-from django.contrib.auth.models import User
-from django.db.models.signals import post_save
+# from django.contrib.auth.models import User
+# from django.db.models.signals import post_save
 
-class UserProfile(models.Model):
-	user = models.OneToOneField(User, related_name='user')
-	phone = CharField(max_length=20, default='', blank=True)
-	city = CharField(max_length=100, default='', blank=True)
-	organization = models.CharField(max_length=100, default='', blank=True)
+# class UserProfile(models.Model):
+# 	user = models.OneToOneField(User, related_name='user')
+# 	first =  CharField(max_length=50, null=True)
+# 	last = CharField(max_length=50, null=True)
+# 	dob = DateField(null=True)
+# 	age = IntegerField(null=True)
+# 	gender = CharField(max_length=50, choices=gender_choices, null=True)
+# 	email = CharField(max_length=50, null=True)
+# 	mobile = CharField(max_length=50, null=True)
+# 	weightclass = CharField(max_length=50, null=True)
+# 	agecategory = CharField(max_length=50, null=True)
+# 	affiliatedivision = CharField(max_length=50, null=True)
 
-	def __str__(self):
-		return self.user.username
+# 	def __str__(self):
+# 		return "%s %s" % (self.first, self.last)
+
+# def create_profile(sender, **kwargs):
+# 	user = kwargs['instance']
+# 	if kwargs['created']:
+# 		user_profile = UserProfile(user=user)
+# 		user_profile.save()
+# 		# user_profile = UserProfile.objects.create(user=user)
 
 
-def create_profile(sender, **kwargs):
-	user = kwargs['instance']
-	if kwargs['created']:
-		user_profile = UserProfile(user=user)
-		user_profile.save()
-		# user_profile = UserProfile.objects.create(user=user)
-
-
-post_save.connect(create_profile, sender=User)
+# post_save.connect(create_profile, sender=User)
 
 
 

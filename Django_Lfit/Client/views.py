@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, reverse, render_to_response
 from django.contrib.auth.decorators import login_required
 
-from Lfit.models import PersonalInfo, CompResults, Payments, CycleCreate, UserProfile
+from Lfit.models import PersonalInfo, CompResults, Payments, CycleCreate
 from Lfit.forms import PersonalInfoForm, CompResultsForm, PaymentsForm, CycleCreateForm  
 from calendar import HTMLCalendar
 
@@ -26,7 +26,7 @@ class CustomView(TemplateView):
 		user_id = User.objects.filter(username=request.user)[0]
 		print(user_id)
 		print(type(user_id))
-		user_profile = UserProfile.objects.filter(user=user_id)[0]
+		user_profile = PersonalInfo.objects.filter(user=user_id)[0]
 
 		if self.template_name == 'Client/dashboard.html':
 				context = {'user':request.user, 'userprofile':user_profile}
@@ -64,7 +64,6 @@ def login_client(request):
 
 			#=====≠#  CUSTOM URL FOR UNIQUE USER #======#
 			# return redirect("/%s/dashboard" % user)
-
 		else:
 			#===LOGIN CREDENTIALS have failed===#
 			state = "Your name or password is not correct. Please try again"

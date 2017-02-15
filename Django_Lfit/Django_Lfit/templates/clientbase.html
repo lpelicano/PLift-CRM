@@ -16,12 +16,11 @@
         <div> 
             {% if user.is_authenticated %}
             <ul class="tab">
-                <li class="tablinks"><a href="{% url 'user:dashboard' %}" id ='main'>Main</a></li>
-                <li class="tablinks"><a href="{% url 'user:training' %}" id='clients'>Clients</a></li>
-                <li class="tablinks"><a href="{% url 'user:competitions' %}" id='training'>Training</a></li>
-                <li class="tablinks"><a href="{% url 'user:account' %}" id='calendar_nav'>Calendar</a></li>
+                <li class="tablinks"><a href="{% url 'user:dashboard' %}" id ='dashboard'>Dashboard</a></li>
+                <li class="tablinks"><a href="{% url 'user:training' %}" id='training'>Training</a></li>
+                <li class="tablinks"><a href="{% url 'user:competitions' %}" id='competitions'>Competitions</a></li>
+                <li class="tablinks"><a href="{% url 'user:account' %}" id='account'>Account</a></li>
                 <li class="tablinks" style="float:right; margin-right:10px"><a href="{% url 'user:logout' %}" id="logout" >Logout</a></li>
-
             </ul>   
             {% endif %}
         </div>

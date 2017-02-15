@@ -13,15 +13,12 @@
 {% block body %}
     <div class="container" style="padding-left:50px; padding-top:40px;">
         
-        <p> {{ user.username }}</p>
-        <p> {{ user.password }}</p>
+        <p> USERNAME: {{ user.username }}</p>
         
-        <p> {{ user.first_name }}</p>
-        <p> {{ user.last_name }}</p>
+        <p> CLIENT: {{ userprofile }}</p>
         
-        <p> {{ userprofile.city }}</p>
-        <p> {{ userprofile.phone }}</p>
-        <p> {{ userprofile.organization }}</p>    
+        
+        <p> gender: {{ userprofile.gender }}</p>
         
     </div>
 {% endblock body%}

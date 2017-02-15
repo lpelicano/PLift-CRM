@@ -7,7 +7,6 @@ from .models import (AnalysisLatest,
 										 Payments, 
 										 CompResults, 
 										 PersonalInfo,
-										 UserProfile,
 										 )
 
 
@@ -16,4 +15,3 @@ admin.site.register(CycleCreate)
 admin.site.register(Payments)
 admin.site.register(CompResults)
 admin.site.register(PersonalInfo)
-admin.site.register(UserProfile)

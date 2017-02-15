@@ -12,7 +12,7 @@ from django.contrib.auth.models import User
 class PersonalInfoForm(forms.ModelForm):
 	class Meta:
 		model = PersonalInfo
-		fields = ['first', 'last', 'dob', 'age', 'gender', 
+		fields = ['user','first', 'last', 'dob', 'age', 'gender', 
 		'email', 'mobile', 'weightclass', 'agecategory',
 		'affiliatedivision']
 

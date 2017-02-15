@@ -3,7 +3,8 @@
     "model": "Lfit.PersonalInfo",
     "pk": 1,
     "fields": {
-      "first": "Peter",
+      "user": 1,
+      "first": "Louie",
       "last": "Pan",
       "dob": "1992-05-07",
       "age": "24",
@@ -19,7 +20,8 @@
     "model": "Lfit.PersonalInfo",
     "pk": 2,
     "fields": {
-      "first": "John",
+      "user": 2,
+      "first": "jimmy",
       "last": "Lennon",
       "dob": "1992-03-09",
       "age": "24",
@@ -35,7 +37,8 @@
     "model": "Lfit.PersonalInfo",
     "pk": 3,
     "fields": {
-      "first": "Michael",
+      "user": 3,
+      "first": "Martin",
       "last": "Scott",
       "dob": "1985-02-09",
       "age": "35",
@@ -51,7 +54,8 @@
     "model": "Lfit.PersonalInfo",
     "pk": 4,
     "fields": {
-      "first": "Jermaine",
+      "user": 4,
+      "first": "Nancy",
       "last": "Rooney",
       "dob": "1992-03-09",
       "age": "24",
@@ -67,7 +71,8 @@
     "model": "Lfit.PersonalInfo",
     "pk": 5,
     "fields": {
-      "first": "Thomas",
+      "user": 5,
+      "first": "Michael",
       "last": "Treburger",
       "dob": "1992-03-09",
       "age": "24",

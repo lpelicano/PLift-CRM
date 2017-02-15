@@ -22,6 +22,6 @@ urlpatterns = [
     url(r'^master$', views.login_redirect, name = 'login_redirect'),
     url(r'^admin/', admin.site.urls),
     url(r'^account/', include('Lfit.urls', namespace="auth")),
-    url(r'^profile/(?P<pk>[\d])$', views.edit_user, name="user_profile"),
     url(r'^user/', include('Client.urls', namespace="user")),
+    # url(r'^profile/(?P<pk>[\d])$', views.edit_user, name="user_profile"),
 ]
