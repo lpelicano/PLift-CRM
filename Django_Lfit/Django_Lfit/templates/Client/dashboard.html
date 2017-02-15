@@ -1,0 +1,24 @@
+{% extends "clientbase.html" %}
+{% load staticfiles %}
+{% load bootstrap3 %}
+
+{% block head%}
+    <title>Lfit dashboard</title>
+    <link rel="stylesheet" href="{% static 'dashboard.css' %}">
+{% endblock head%}
+
+{%block content%}
+{% endblock content%}
+
+{% block body %}
+    <div class="container" style="padding-left:50px; padding-top:40px;">
+        
+        <p> {{ user.username }}</p>
+        <p> {{ user.password }}</p>
+        
+        <p> {{ user }}</p>
+
+    
+        
+    </div>
+{% endblock body%}
