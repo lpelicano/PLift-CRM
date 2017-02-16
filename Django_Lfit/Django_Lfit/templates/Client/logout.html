@@ -1,19 +1,18 @@
-{% extends 'clientbase.html' %}
+<!doctype html> 
 {% load staticfiles %}
 
-
-{% block head %}
-	<title>Logout</title>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+    <title>Logout</title>
     <link rel="stylesheet" href="{% static 'auth.css' %}">
+</head>
 
-{% endblock head %}
-
-{% block body %}
-<div class="container customform">
-	<h1> You're outta here! </h1>
-	<br><br>
-	<p> Successfully logged out from your account </p>
-    <br><br>
-    <p><a href="{% url 'user:login' %}">login</a></p>
-</div>
-{% endblock body %}
+<body>
+    <div class="container customform">
+        <h1> You're outta here! </h1>
+        <br><br>
+        <p> Successfully logged out from your account </p>
+        <br><br>
+        <p><a href="{% url 'user:login' %}">login</a></p>
+    </div>
+</body>
