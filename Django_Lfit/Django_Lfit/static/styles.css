@@ -16,8 +16,6 @@ html{
 
 .AtheletePage{
 /*    height:800px;*/
-    width:100%;
-    
 }
 
 .navigationbar {
@@ -93,11 +91,9 @@ nav ul li{
 /* Style the tab content */
 .tabcontent {
     display: none;
-    padding: 6px 12px;
     border: 0px solid #ccc;
     border-top: none;
     height:100%;
-    width:100%;
 }
 
 .Clientsnav{

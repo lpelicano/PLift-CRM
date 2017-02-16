@@ -8,50 +8,48 @@
 
 {% block body %}
 <!--    NAVBAR    -->
-    <div class="container Clientsnav">
-       <ul class="tab">
-          <li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'PersonalInfo')" style="display:'active'; ">Personal Info.</a></li>
-          <li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Competition')">Competition</a></li>
-          <li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Payments')">Payments</a></li>
-        </ul>
-    </div>
 
 <!--    CONTENT    -->        
     <div class="AtheletePage">
         <div id="PersonalInfo" class="tabcontent" style="display:block">
           <h3>Personal Info.</h3>
           <p>This table displays personal information of all clients</p>
-        
-        <div class= "container-fixed table-responsive">
-        <table class="table table-hover table-striped">
-        <tr>
-            <th>First</th>
-            <th>Last</th>
-            <th>DOB</th>
-            <th>Age</th>
-            <th>Gender</th>
-            <th>Email</th>
-            <th>Mobile</th>
-            <th>Weight Class</th>
-            <th>Age category</th>
-            <th>Affiliate Division</th> 
-        </tr>
-        {% for n in query_personal %}
-    <!--    <div class="pi-div">-->
-        <tr>
-            <td class="td_css" style="">{{n.first}}</td>
-            <td class="td_css">{{n.last}}</td>
-            <td class="td_css">{{n.dob}}</td>
-            <td class="td_css">{{n.age}}</td>
-            <td class="td_css">{{n.gender}}</td>
-            <td class="td_css">{{n.email}}</td>
-            <td class="td_css">{{n.mobile}}</td>
-            <td class="td_css">{{n.weightclass}}</td>
-            <td class="td_css">{{n.agecategory}}</td>
-            <td class="td_css">{{n.affiliatedivision}}</td>
-        </tr>
-        {% endfor %}
-        </table>
+        <br><br>
+        <div class="row no-pad">
+            <div class="col-lg-10 col-lg-offset-1">
+                <div class= "container-fixed table-responsive">
+                <table class="table table-hover table-striped">
+                <tr>
+                    <th>First</th>
+                    <th>Last</th>
+                    <th>DOB</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Email</th>
+                    <th>Mobile</th>
+                    <th>Weight Class</th>
+                    <th>Age category</th>
+                    <th>Affiliate Division</th> 
+                </tr>
+                {% for n in query_personal %}
+            <!--    <div class="pi-div">-->
+                <tr>
+                    <td>{{n.first}}</td>
+                    <td>{{n.last}}</td>
+                    <td>{{n.dob}}</td>
+                    <td>{{n.age}}</td>
+                    <td>{{n.gender}}</td>
+                    <td>{{n.email}}</td>
+                    <td>{{n.mobile}}</td>
+                    <td>{{n.weightclass}}</td>
+                    <td>{{n.agecategory}}</td>
+                    <td>{{n.affiliatedivision}}</td>
+                    <td id="option"><a href=#><i class="glyphicon glyphicon-edit"></i></a></td>
+                </tr>
+                {% endfor %}
+                </table>
+                </div>
+            </div>
         </div>
         
         </div>
@@ -59,8 +57,11 @@
         <div id="Competition" class="tabcontent">
           <h3>Competition Results </h3>
           <p>This table shows all competition results</p> 
-        <div style="overflow-x:auto;" class="row">
-            <div class= "container table-responsive">
+            <br><br>
+            <div>
+            <div class="container-fixed">
+            <div class="row no-pad">
+            <div class="col-lg-11 table-responsive">
                 <table class="table table-hover table-striped">
                 <tr>
                     <th>Comp. Date</th>
@@ -86,38 +87,42 @@
                 {% for n in query_comp %}
             <!--    <div class="pi-div">-->
                 <tr>
-                    <td class="td_css">{{n.compdate}}</td>
-                    <td class="td_css">{{n.compname}}</td>
-                    <td class="td_css">{{n.complocation}}</td>
-                    <td class="td_css">{{n.client}}</td>
-                    <td class="td_css">{{n.gender}}</td>
-                    <td class="td_css">{{n.age}}</td>
-                    <td class="td_css">{{n.bodyweight}}</td>
-                    <td class="td_css">{{n.weightclass}}</td>
-                    <td class="td_css">{{n.sq1}}</td>
-                    <td class="td_css">{{n.sq2}}</td>
-                    <td class="td_css">{{n.sq3}}</td>
-                    <td class="td_css">{{n.bp1}}</td>
-                    <td class="td_css">{{n.bp2}}</td>
-                    <td class="td_css">{{n.bp3}}</td>
-                    <td class="td_css">{{n.dl1}}</td>
-                    <td class="td_css">{{n.dl2}}</td>
-                    <td class="td_css">{{n.dl3}}</td>
-                    <td class="td_css">{{n.comptotal}}</td>
-                    <td class="td_css">{{n.wilks}}</td>
+                    <td>{{n.compdate}}</td>
+                    <td>{{n.compname}}</td>
+                    <td>{{n.complocation}}</td>
+                    <td>{{n.client}}</td>
+                    <td>{{n.gender}}</td>
+                    <td>{{n.age}}</td>
+                    <td>{{n.bodyweight}}</td>
+                    <td>{{n.weightclass}}</td>
+                    <td>{{n.sq1}}</td>
+                    <td>{{n.sq2}}</td>
+                    <td>{{n.sq3}}</td>
+                    <td>{{n.bp1}}</td>
+                    <td>{{n.bp2}}</td>
+                    <td>{{n.bp3}}</td>
+                    <td>{{n.dl1}}</td>
+                    <td>{{n.dl2}}</td>
+                    <td>{{n.dl3}}</td>
+                    <td>{{n.comptotal}}</td>
+                    <td>{{n.wilks}}</td>
                 </tr>
                 {% endfor %}
                 </table>
             </div>
         </div>
-        
         </div>
+        </div>
+        </div>
+        
 
         <div id="Payments" class="tabcontent">
           <h3>Payments</h3>
           <p>This table shows current payments and plans</p>
-
-        <div class= "container table-responsive">
+            <br><br>
+            <div class="container-fixed">
+            <div class="row no-pad">
+            <div class="col-lg-10 col-lg-offset-1 table-responsive">
                 <table class="table table-hover table-striped">
                 <tr>
                     <th>Pay Date</th>
@@ -131,13 +136,13 @@
                 {% for n in query_payments %}
             <!--    <div class="pi-div">-->
                 <tr>
-                    <td class="td_css" style="">{{n.paymentdate}}</td>
-                    <td class="td_css">{{n.client}}</td>
-                    <td class="td_css">{{n.cyclename}}</td>
-                    <td class="td_css">{{n.payplan}}</td>
-                    <td class="td_css">{{n.weeks}}</td>
-                    <td class="td_css">{{n.totaltopay}}</td>
-                    <td class="td_css">{{n.paymentmethod}}</td>
+                    <td>{{n.paymentdate}}</td>
+                    <td>{{n.client}}</td>
+                    <td>{{n.cyclename}}</td>
+                    <td>{{n.payplan}}</td>
+                    <td>{{n.weeks}}</td>
+                    <td>{{n.totaltopay}}</td>
+                    <td>{{n.paymentmethod}}</td>
 
                 </tr>
                 {% endfor %}
@@ -145,7 +150,8 @@
         </div>
         
         </div>
-
+            </div>
+        </div>
     
     </div>
 
@@ -173,8 +179,8 @@
         }    
     </script>
     <script>
-        document.getElementById("clients").style.backgroundColor = "#000000"
-        document.getElementById("clients").style.color = "white"
+        document.getElementById("clients").style.backgroundColor = "#FFF";
+        document.getElementById("clients").style.color = "#00d8ff";
         
 //        style="background-color:#000000; color:white"
 

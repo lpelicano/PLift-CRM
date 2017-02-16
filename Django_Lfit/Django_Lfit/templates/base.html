@@ -7,34 +7,32 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="{% static 'styles.css' %}">
         <link rel="stylesheet" href="{% static 'base.css' %}">
-        
-        
         {% block head%}
             <title>NO TITLE</title>
         {% endblock head%}
     </head>
 <!--    <body>-->
     <body style="background-color: #FFF;">
-        <div class="row">
+        <div class="row no-pad">
         <div class="col-lg-2 col-md-2 col-xs-2 side_column">
-            <img src="{% static 'img/Alpha_Logo.png' %}" class="brand-logo">
+            <a href="{% url 'auth:home' %}"><img src="{% static 'img/Alpha_Logo.png' %}" class="brand-logo"></a>
             <div class="links" id="links">
-                <div id="client_tabs" style="display:none">
-                    <p><a href=#>Personal Info</a></p>
-                    <p><a href=#>Competition</a></p>
-                    <p><a href=#>Payments</a></p>
+                <div id="client_tabs" class="tablinks" style="display:none">
+                    <p><a href="javascript:void(0)" onclick="openCity(event, 'PersonalInfo')" style="display:'active';">Personal Info</a></p>
+                    <p><a href="javascript:void(0)" onclick="openCity(event, 'Competition')">Competition</a></p>
+                    <p><a href="javascript:void(0)" onclick="openCity(event, 'Payments')">Payments</a></p>
                 </div>
-                <div id="training_tabs" style="display:none">
-                    <p><a href=#>Cycle Creation</a></p>
-                    <p><a href=#>Latest Creation</a></p>
-                    <p><a href=#>Live Cycle</a></p>
-                    <p><a href=#>Pending Cycle</a></p>
-                    <p><a href=#>Analysis</a></p>
+                <div id="training_tabs" class="tablinks" style="display:none">
+                    <p><a href="javascript:void(0)" onclick="openCity(event, 'cycleCreation')" style="display:'active';">Cycle Creation</a></p>
+                    <p><a href="javascript:void(0)" onclick="openCity(event, 'latestCycle')">Latest Creation</a></p>
+                    <p><a href="javascript:void(0)" onclick="openCity(event, 'liveCycle')">Live Cycle</a></p>
+                    <p><a href="javascript:void(0)" onclick="openCity(event, 'pendingCycle')">Pending Cycle</a></p>
+                    <p><a href="javascript:void(0)" onclick="openCity(event, 'Analysis')">Analysis</a></p>
                 </div>
-                <div id="research_tabs" style="display:none">
-                    <p><a href=#>Fatigue v.s Strength</a></p>
-                    <p><a href=#>Tab 2</a></p>
-                    <p><a href=#>Tab 3</a></p>
+                <div id="research_tabs" class="tablinks" style="display:none">
+                    <p><a href="javascript:void(0)" onclick="openCity(event, 'PersonalInfo')" style="display:'active';">Fatigue v.s Strength</a></p>
+                    <p><a href="javascript:void(0)" onclick="openCity(event, 'Competition')">Tab 2</a></p>
+                    <p><a href="javascript:void(0)" onclick="openCity(event, 'Payments')">Tab 3</a></p>
                 </div>            
             </div>
         </div>
@@ -42,7 +40,7 @@
             <ul class="tab">
                 <li class=""><a href="{% url 'auth:home' %}" id ='main'><i class="glyphicon glyphicon-home"> Main </i></a></li>
                 <li class="tablinks"><a href="{% url 'auth:clients' %}" id='clients'> <i class="glyphicon glyphicon-user"> Clients </i></a></li>
-                <li class="tablinks"><a href="{% url 'auth:training' %}" id='training'><span class="glyphicons glyphicons-dumbbell"></span><i class="glyphicon glyphicon-book"> Training </i></a></li>
+                <li class="tablinks"><a href="{% url 'auth:training' %}" id='training'><i class="glyphicon glyphicon-book"> Training </i></a></li>
                 <li class="tablinks"><a href="{% url 'auth:calendar' %}" id='calendar_nav'><i class="glyphicon glyphicon-calendar"> Calendar </i></a></li>
                 <li class="tablinks"><a href="{% url 'auth:research' %}" id='research'><i class="glyphicon glyphicon-stats"> Research </i></a></li>
                 <li class="tablinks"><a href="{% url 'auth:forms_nav' %}" id='forms_nav'>Forms</a></li>

@@ -1,28 +1,4 @@
 
-/*
-.table_css {
-    
-   position:center;
-    width: 90%;
-}
-
-table, th, td{
-    border: 1px solid black;
-    padding: 5px 10px;
-    border-collapse: collapse;
-}
-
-tr:hover {
-    background-color:#f5f5f5;   
-}
-
-
-th {
-    background-color: #4CAF50;
-    color: white;
-}
-*/
-
 th {
     background-color: black;
     color:white;
@@ -30,3 +6,22 @@ th {
 
 
 tr:nth-child(even){background-color: #DDDDDD}
+
+
+#comptable {
+    
+    width: 85%;
+    
+}
+
+#option {
+    color:black;
+    background-color:white;
+    border-color:none;
+    border:0px;
+    padding-top:20px;
+}
+
+#option > a {
+    color:black;
+}

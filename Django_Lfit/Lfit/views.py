@@ -70,12 +70,6 @@ def login_redirect(request):
 #===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#===#
 
 
-def export(request):
-	queryall = PersonalInfo.objects.all()
-	#		print ('Landed on : ', name.first)
-	return render(request, 'Lfit/export.html', {'queryall': queryall}) 
-
-
 # === Personal Details Form ============================== #
 
 def personalinput(request):

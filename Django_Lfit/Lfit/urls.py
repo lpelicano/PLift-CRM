@@ -16,7 +16,6 @@ urlpatterns = [
     url(r'^research$', views.research, name="research"), 
     # url(r'^research$', CustomView.as_view(template_name = 'Lfit/research.html')),
     url(r'^forms_nav$', CustomView.as_view(template_name = 'Lfit/forms_nav.html'), name="forms_nav"),    
-    url(r'^export$', views.export, name = 'export'),
     # url(r'^matty', views.mattyplot,name = 'matplotlib'),
 
     url(r'^personalinput$', views.personalinput, name = 'personalinput'),
