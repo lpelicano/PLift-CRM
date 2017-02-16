@@ -48,7 +48,7 @@ class CustomView(TemplateView):
 			return redirect("/account/training")
 
 def research(request): 
-	# plt,fig,ax,figure = Main.plotgraph()
+	Graph.plot_pie()
 	#canvas = FigureCanvas(fig)
 	return render(request, 'Lfit/research.html')#, {'figure':figure})
 	 
