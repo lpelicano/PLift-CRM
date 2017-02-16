@@ -1,18 +1,20 @@
 <!doctype html> 
-
 {% load staticfiles %}
 
 <html>
     <head>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <link rel="stylesheet" href="{% static 'styles.css' %}">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{% static 'styles.css' %}">
+        <link rel="stylesheet" href="{% static 'base.css' %}">
+
         {% block head%}
             <title>NO TITLE</title>
         {% endblock head%}
     </head>
 <!--    <body>-->
-    <body style="background-color: #E8E8E8;">
+<!--
+    <body style="background-color: #FFF;">
         <div> 
             {% if user.is_authenticated %}
             <ul class="tab">
@@ -24,7 +26,51 @@
             </ul>   
             {% endif %}
         </div>
+    </body> 
+-->
+<body style="background-color: #FFF;">
+        <div class="row">
+        <div class="col-lg-2 col-md-2 col-xs-2 side_column">
+            <img src="{% static 'img/Alpha_Logo.png' %}" class="brand-logo">
+            <div class="coachinfo">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-xs-6">
+                        <img src="{% static 'img/coach.jpg' %}" class="brand-logo img-circle">
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-xs-6">
+                        <p> Coach </p>
+                        <p> Couch Name </p>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div id="dash_tabs">
+                <p><a href=#>Overview</a></p>
+                <p><a href=#>Today's training</a></p>
+                <p><a href=#>Coach analysis</a></p>
+            </div>
+            <div id="training_tabs">
+                <p><a href=#>Current</a></p>
+                <p><a href=#>Today's Protocol</a></p>
+                <p><a href=#>Training Log</a></p>
+                <p><a href=#>Cycle Archive</a></p>
+            </div>
+            <div id="calendar_tabs">
+                <p><a href=#>Overview</a></p>
+                <p><a href=#>Result</a></p>
+            </div>            
+        </div>
+        <div class="col-lg-10 col-md-10 col-xs-10">
+            <ul class="tab">
+                <li class="tablinks"><a href="{% url 'user:dashboard' %}" id ='dashboard'>Dashboard</a></li>
+                <li class="tablinks"><a href="{% url 'user:training' %}" id='training'>Training</a></li>
+                <li class="tablinks"><a href="{% url 'user:competitions' %}" id='competitions'>Competitions</a></li>
+                <li class="tablinks"><a href="{% url 'user:account' %}" id='account'>Account</a></li>
+                <li class="tablinks" style="float:right; margin-right:10px"><a href="{% url 'user:logout' %}" id="logout" >Logout</a></li>
+            </ul>   
         {% block body %}
         {% endblock body%}
+        </div>
+        </div>
     </body> 
 </html>

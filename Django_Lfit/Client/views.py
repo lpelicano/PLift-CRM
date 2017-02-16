@@ -22,11 +22,9 @@ class CustomView(TemplateView):
 	def get(self, request): 
 
 		#TWO STEPS: Querying both models
-		try: 
-			user_id = User.objects.filter(username=request.user)[0]
-			user_profile = PersonalInfo.objects.filter(user=user_id)[0]
-		except:
-			pass
+
+		user_id = User.objects.filter(username=request.user)[0]
+		user_profile = PersonalInfo.objects.filter(user=user_id)[0]
 
 		if self.template_name == 'Client/dashboard.html':
 				context = {'user':request.user, 'userprofile':user_profile}

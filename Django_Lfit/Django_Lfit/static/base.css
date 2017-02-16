@@ -1,0 +1,67 @@
+html {
+    min-height:100%;
+}
+
+.brand-logo {
+    width:100px;
+}
+
+.side_column{
+    background-color:white;
+    height:700px;
+/*    border:1px solid;*/
+    text-align: center;
+}
+
+.links {
+    margin-top:50px;
+}
+
+.coachinfo{
+    margin-top:15px;
+}
+
+
+
+/* NAV BAR COLOUR SCHEME */
+
+/* Style the list */
+ul.tab {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #FFF;
+}
+
+/* Float the list items side by side */
+ul.tab li {float: left;}
+
+/* Style the links inside the list items */
+ul.tab li a {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of links on hover */
+ul.tab li a:hover {background-color: #ddd;}
+
+/* Create an active/current tablink class */
+ul.tab li a:focus, .active {background-color: #ccc;}
+
+
+
+
+
+
+
+
+
+
+
+
