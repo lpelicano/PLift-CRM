@@ -1,0 +1,7 @@
+g.mpld3-xaxis, g.mpld3-xaxis {
+display: none;
+}
+
+path {
+    stroke:white;
+}

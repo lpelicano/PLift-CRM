@@ -5,6 +5,11 @@
 {% block head%}
     <title>Lfit dashboard</title>
     <link rel="stylesheet" href="{% static 'dashboard.css' %}">
+    <script>
+            $(function(){
+                $("#includedContent").load("pie_plot");
+            });
+    </script>
 {% endblock head%}
 
 
@@ -12,14 +17,18 @@
     <div class="container" style="padding-left:50px; padding-top:40px;">
         
         <p> USERNAME: {{ user.username }}</p>
-        
         <p> CLIENT: {{ userprofile }}</p>
-        
         <p> gender: {{ userprofile.gender }}</p>
-
+        <p> {{cycle_data.client}} </p>        
         <br>
-        
+
+        <div id="includedContent">
+        </div>
         <img src="{{ userprofile.profile_pic.url }}" width=240>
+    <script>
+        console.log( document.getElementsByClassName("mpld3-yaxis"));
         
+        
+    </script>
     </div>
 {% endblock body%}

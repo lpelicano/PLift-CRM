@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, reverse, render_to_response
 from django.contrib.auth.decorators import login_required
 
-from Lfit.models import PersonalInfo
+from Lfit.models import PersonalInfo, CycleCreate
 
 
 from calendar import HTMLCalendar
@@ -12,6 +12,8 @@ from django.views.generic.edit import FormView
 
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.models import User 
+
+from Lfit.graphs import Graph
 
 from Client.forms import ImageUploadForm
 
@@ -27,7 +29,9 @@ class CustomView(TemplateView):
 		user_profile = PersonalInfo.objects.filter(user=user_id)[0]
 
 		if self.template_name == 'Client/dashboard.html':
-				context = {'user':request.user, 'userprofile':user_profile}
+				cycle_data = CycleCreate.objects.filter(client=user_profile)[0]
+				Graph.plot_user(user_id, cycle_data.bpcttot, cycle_data.dpcttot, cycle_data.spctot)
+				context = {'user':request.user, 'userprofile':user_profile, 'cycle_data':cycle_data}
 				return render(request, self.template_name, context)
 
 		if self.template_name == 'Client/training.html':
@@ -50,6 +54,10 @@ class CustomView(TemplateView):
 				obj.save()
 
 		return redirect("/user/account")
+
+
+def pie_plot(request):
+	return render(request, 'Lfit/pie/louie.html')
 
 
 #===##===##===##===##===##===##===#

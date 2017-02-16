@@ -19,5 +19,7 @@ urlpatterns = [
     url(r'^login$', login_client, name = "login"),
     url(r'^logout$', logout_client, name="logout"),
 
+    url(r'^pie_plot$', views.pie_plot),
+    
     #url(r'^home$', login_required(CustomView.as_view(template_name = 'Lfit/index.html'))),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

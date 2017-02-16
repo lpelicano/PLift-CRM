@@ -62,15 +62,31 @@ class Graph():
 
 	def plot_pie(): 
 
-		labels = 'Frogs', 'Hogs', 'Dogs', 'Logs'
-		sizes = [15, 30, 45, 10]
-		explode = (0, 0.1, 0, 0)  # only "explode" the 2nd slice (i.e. 'Hogs')
+		labels = 'SPCTOT', 'DPCTOT', 'BPCTOT'
+		sizes = [15, 30, 45]
+		# explode = (0, 0.1, 0, 0)  # only "explode" the 2nd slice (i.e. 'Hogs')
 		fig1, ax1 = plt.subplots()
 		ax1.pie(sizes, labels=labels, autopct='%1.1f%%',
 		        shadow=True, startangle=0)
 		ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
 
 		mpld3.save_html(fig1, 'Django_Lfit/templates/Lfit/pie/pie.html')
+
+	def plot_user(user, bpctot, dpctot, spctot): 
+
+		labels = 'BPCTOT', 'DPCTOT', 'SPCTOT'
+		sizes = [bpctot, dpctot, spctot]
+		# explode = (0, 0.1, 0, 0)  # only "explode" the 2nd slice (i.e. 'Hogs')
+
+		fig1, ax1 = plt.subplots()
+		ax1.pie(sizes, labels=labels, autopct='%1.1f%%',
+		        shadow=True, startangle=0)
+		ax1.axis("off")
+
+		ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+
+		
+		mpld3.save_html(fig1, 'Django_Lfit/templates/Lfit/pie/{}.html'.format(user))
 
 
 if __name__ == '__main__':
