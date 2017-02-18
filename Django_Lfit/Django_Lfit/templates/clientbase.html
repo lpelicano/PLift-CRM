@@ -6,30 +6,17 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="{% static 'styles.css' %}">
-        <link rel="stylesheet" href="{% static 'base.css' %}">
+        <link rel="stylesheet" href="{% static 'clientbase.css' %}">
+       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
         {% block head%}
             <title>NO TITLE</title>
         {% endblock head%}
     </head>
-<!--    <body>-->
-<!--
-    <body style="background-color: #FFF;">
-        <div> 
-            {% if user.is_authenticated %}
-            <ul class="tab">
-                <li class="tablinks"><a href="{% url 'user:dashboard' %}" id ='dashboard'>Dashboard</a></li>
-                <li class="tablinks"><a href="{% url 'user:training' %}" id='training'>Training</a></li>
-                <li class="tablinks"><a href="{% url 'user:competitions' %}" id='competitions'>Competitions</a></li>
-                <li class="tablinks"><a href="{% url 'user:account' %}" id='account'>Account</a></li>
-                <li class="tablinks" style="float:right; margin-right:10px"><a href="{% url 'user:logout' %}" id="logout" >Logout</a></li>
-            </ul>   
-            {% endif %}
-        </div>
-    </body> 
--->
+
 <body style="background-color: #FFF;">
         <div class="row">
+        <!-- SIDE BAR -->
         <div class="col-lg-2 col-md-2 col-xs-2 side_column">
             <img src="{% static 'img/Alpha_Logo.png' %}" class="brand-logo">
             <div class="coachinfo">
@@ -44,33 +31,112 @@
                 </div>
             </div>
             <br>
-            <div id="dash_tabs">
-                <p><a href=#>Overview</a></p>
-                <p><a href=#>Today's training</a></p>
-                <p><a href=#>Coach analysis</a></p>
+            <!-- side bar TABS -->
+            <div id="dash_tabs" class="tablinks" style="display:none">
+                <p><a href="javascript:void(0)" onclick="openCity(event, 'Overview')" style="display:'active';">Overview</a></p>
+                <p><a href="javascript:void(0)" onclick="openCity(event, 'Todaytraining')" style="display:'active';">Today's training</a></p>
+                <p><a href="javascript:void(0)" onclick="openCity(event, 'Coachanalysis')" style="display:'active';">Coach analysis</a></p>
             </div>
-            <div id="training_tabs">
-                <p><a href=#>Current</a></p>
-                <p><a href=#>Today's Protocol</a></p>
-                <p><a href=#>Training Log</a></p>
-                <p><a href=#>Cycle Archive</a></p>
+            <div id="training_tabs" class="tablinks" style="display:none">
+                <p><a href="javascript:void(0)" onclick="openCity(event, 'Current')" style="display:'active';">Current</a></p>
+                <p><a href="javascript:void(0)" onclick="openCity(event, 'Todayprotocol')" style="display:'active';">Today's Protocol</a></p>
+                <p><a href="javascript:void(0)" onclick="openCity(event, 'Log')" style="display:'active';">Training Log</a></p>
+                <p><a href="javascript:void(0)" onclick="openCity(event, 'Archive')" style="display:'active';">Cycle Archive</a></p>
             </div>
-            <div id="calendar_tabs">
-                <p><a href=#>Overview</a></p>
-                <p><a href=#>Result</a></p>
-            </div>            
+            <div id="calendar_tabs" class="tablinks" style="display:none">
+                <p><a href="javascript:void(0)" onclick="openCity(event, 'Compoverview')" style="display:'active';">Competition Overview</a></p>
+                <p><a href="javascript:void(0)" onclick="openCity(event, 'Compoverview')" style="display:'active';">History</a></p>
+            <div id="account_tabs" class="tablinks" style="display:none">
+            
+                
+            </div>   
+            <!-- END/side bar TABS          -->
         </div>
+            </div>
+        <!-- END/sidebar -->
+
         <div class="col-lg-10 col-md-10 col-xs-10">
-            <ul class="tab">
+        <!-- MAIN NAV -->
+            <nav class="navbar">
+            <div class="container">
+            <ul class="nav navbar-nav navbar-left">
                 <li class="tablinks"><a href="{% url 'user:dashboard' %}" id ='dashboard'>Dashboard</a></li>
                 <li class="tablinks"><a href="{% url 'user:training' %}" id='training'>Training</a></li>
                 <li class="tablinks"><a href="{% url 'user:competitions' %}" id='competitions'>Competitions</a></li>
                 <li class="tablinks"><a href="{% url 'user:account' %}" id='account'>Account</a></li>
-                <li class="tablinks" style="float:right; margin-right:10px"><a href="{% url 'user:logout' %}" id="logout" >Logout</a></li>
-            </ul>   
+<!--                <li class="tablinks" style="float:right; margin-right:10px"><a href="{% url 'user:logout' %}" id="logout" >Logout</a></li>-->  
+            </ul>  
+<!-- *Profile Dropdown* -->
+            <ul class="nav navbar-right">
+                <li class="dropdown" style="float:right">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <span class="glyphicon glyphicon-user"></span>
+                        <strong>Salman</strong>
+                        <span class="glyphicon glyphicon-chevron-down"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <div class="navbar-login">
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <p class="text-center">
+                                            <span class="glyphicon glyphicon-user icon-size"></span>
+                                        </p>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <p class="text-left"><strong>Salman Khan</strong></p>
+                                        <p class="text-left small">crazytodevelop@@gmail.com</p>
+                                        <p class="text-left">
+                                            <a href="#" class="btn btn-primary btn-block btn-sm">Profile</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="divider navbar-login-session-bg"></li>
+                         <li><a href="#">Account Settings <span class="glyphicon glyphicon-cog pull-right"></span></a></li>
+            <li class="divider"></li>
+            <li><a href="#">User stats <span class="glyphicon glyphicon-stats pull-right"></span></a></li>
+            <li class="divider"></li>
+            <li><a href="#">Messages <span class="badge pull-right"> 42 </span></a></li>
+            <li class="divider"></li>
+            <li><a href="#">Favourites Snippets <span class="glyphicon glyphicon-heart pull-right"></span></a></li>
+            <li class="divider"></li>
+            <li><a href="#">Sign Out <span class="glyphicon glyphicon-log-out pull-right"></span></a></li>
+                    </ul>
+                </li>
+            </ul>
+        <!-- END/main nav  -->
+
+            </div>
+            </nav>
+            <section style="display:block">
         {% block body %}
+            
         {% endblock body%}
+            </section>
         </div>
         </div>
+        <script>
+        /* When the user clicks on the button, 
+        toggle between hiding and showing the dropdown content */
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(e) {
+          if (!e.target.matches('.dropbtn')) {
+
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            for (var d = 0; d < dropdowns.length; d++) {
+              var openDropdown = dropdowns[d];
+              if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+              }
+            }
+          }
+        }
+    </script>
     </body> 
 </html>

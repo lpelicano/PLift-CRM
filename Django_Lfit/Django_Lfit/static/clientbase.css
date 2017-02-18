@@ -1,3 +1,7 @@
+html {
+    min-height:100%;
+}
+
 .row.no-pad {
   margin-right:0;
   margin-left:0;
@@ -6,3 +10,114 @@
   padding-right:0;
   padding-left:0;
 }
+
+.brand-logo {
+    width:100px;
+}
+
+.side_column{
+    background-color:white;
+    height:700px;
+/*    border:1px solid;*/
+    text-align: center;
+}
+
+.links {
+    margin-top:50px;
+}
+
+.coachinfo{
+    margin-top:15px;
+}
+
+
+.tablinks > p {
+    text-align:center;
+    margin-top:30px;
+}
+
+
+.tablinks > p > a{
+    color: black;
+    padding:5px 10px;
+
+}
+
+.tablinks > p > a:hover {
+    border-bottom: 1px solid;
+    border-color:#00d8ff;
+    color: black;
+    text-decoration: none;
+}
+
+.tablinks > p > a:active {
+    text-decoration: none;
+}
+
+.tablinks > p > a:focus {
+    text-decoration: none;
+    border-bottom: 1px solid;
+    border-color:#00d8ff;
+}
+
+/* NAV BAR COLOUR SCHEME */
+
+/* Style the list */
+ul.tab {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #FFF;
+}
+
+/* Float the list items side by side */
+ul.tab li {float: left;}
+
+/* Style the links inside the list items */
+ul.tab li a {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of links on hover */
+ul.tab li a:hover {background-color: #ddd;}
+
+/* Create an active/current tablink class */
+/*ul.tab li a:focus, .active {background-color: #ccc;}*/
+
+/* main nav/Account Dropdown links*/
+.dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.show {display:block;}
+
