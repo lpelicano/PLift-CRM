@@ -4,31 +4,38 @@
 
 {% block head%}
     <title>Lfit dashboard</title>
-    <link rel="stylesheet" href="{% static 'dashboard.css' %}">
     <script>
             $(function(){
                 $("#includedContent").load("pie_plot");
             });
     </script>
+    <link rel="stylesheet" href="{% static 'dashboard.css' %}">
 {% endblock head%}
 
 
 {% block body %}
-    <div class="container" style="padding-left:50px; padding-top:40px;">
-        
+    <div class="row no-pad">
+    <div class="container col-lg-6">
         <p> USERNAME: {{ user.username }}</p>
         <p> CLIENT: {{ userprofile }}</p>
         <p> gender: {{ userprofile.gender }}</p>
         <p> {{cycle_data.client}} </p>        
         <br>
+        <div style="width:100px">
 
-        <div id="includedContent">
         </div>
         <img src="{{ userprofile.profile_pic.url }}" width=240>
+        </div>
+        <div class="col-lg-6 pie_section">
+        <div id="includedContent">
+        </div>
+        </div>
+    </div>
     <script>
-        console.log( document.getElementsByClassName("mpld3-yaxis"));
+        console.log(document.getElementsByTagName("P"));
+//        console.log(document.getElementsByClassName("container"));
         
         
     </script>
-    </div>
 {% endblock body%}
+

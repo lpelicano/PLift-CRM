@@ -1,6 +1,7 @@
 from django.db import models
 from django.db.models import (CharField, 
 															DateField, 
+															DateTimeField,
 															IntegerField, 
 															TextField, 
 															EmailField, 
@@ -19,7 +20,7 @@ paid_choices = (('y', 'yes'),('n', 'no'),)
 method_choices = (('cash', 'Cash'),('pp', 'Paypal'),('bank', 'Bank Transfer'),)
 	# .. Training
 live_choices = (('y', 'yes'),('n', 'no'),)
-trainingtype_choices = (('t','TRAINING'), ('o', 'OFFSEASON'), ('p', 'PEAKING'),)
+trainingtype_choices = (('tra','TRAINING'), ('off', 'OFFSEASON'), ('pea', 'PEAKING'),)
 
 #MAIN > Overview
 #MAIN > Overview (Widget)
@@ -42,8 +43,10 @@ class PersonalInfo(models.Model):
 	weightclass = CharField(max_length=50, null=True)
 	agecategory = CharField(max_length=50, null=True)
 	affiliatedivision = CharField(max_length=50, null=True)
-
 	profile_pic = ImageField(upload_to="profile_pic", null=True)
+
+	last_login = DateTimeField(auto_now_add=True, null=True	)
+	last_modified = DateTimeField(auto_now=True, null=True)
 
 	def __str__(self):
 		return "%s %s" % (self.first, self.last)

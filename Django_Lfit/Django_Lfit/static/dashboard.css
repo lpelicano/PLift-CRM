@@ -2,6 +2,32 @@ g.mpld3-xaxis, g.mpld3-xaxis {
 display: none;
 }
 
+g.mpld3-yaxis, g.mpld3-yaxis {
+display: none;
+}
+
 path {
     stroke:white;
 }
+
+.includedContent {
+    width:100px;
+    background-color:black;
+    
+}
+
+.pie_section {
+}
+
+svg.mpld3-figure {
+    
+    width:400px;
+}
+
+.mpld3-baseaxes {
+/*    transform: translate(100);*/
+    transform: translate(-40px,100px);
+    width:100%;
+}
+
+

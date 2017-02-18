@@ -47,8 +47,8 @@ class Graph():
 		plt.ylabel('Total Fatigue % per week')
 		plt.grid(True)
 
-		mpld3.save_html(fig, 'S2B.html')
-		return plt,fig, ax, figure
+		mpld3.save_html(fig, 'Django_Lfit/templates/Lfit/graph/S2B.html')
+		#return plt,fig, ax, figure
 
 	def moveS2B():
 		
@@ -81,11 +81,8 @@ class Graph():
 		fig1, ax1 = plt.subplots()
 		ax1.pie(sizes, labels=labels, autopct='%1.1f%%',
 		        shadow=True, startangle=0)
-		ax1.axis("off")
-
 		ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
 
-		
 		mpld3.save_html(fig1, 'Django_Lfit/templates/Lfit/pie/{}.html'.format(user))
 
 

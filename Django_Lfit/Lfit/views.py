@@ -48,14 +48,14 @@ class CustomView(TemplateView):
 			return redirect("/account/training")
 
 def research(request): 
-	#Graph.plot_pie()
+	#Graph.plotgraph()
 	#canvas = FigureCanvas(fig)
 	return render(request, 'Lfit/research.html')#, {'figure':figure})
 	 
 # Create your views here.
 
 def line_graph(request):
-	return render(request, 'Lfit/S2B.html')
+	return render(request, 'Lfit/graph/S2B.html')
 
 
 def login_redirect(request):
@@ -120,6 +120,7 @@ def cyclecreateinput(request):
 		form = CycleCreateForm(request.POST)
 		if form.is_valid():
 			obj = form.save(commit=False)
+			obj.cyclename = form.cleaned_data['trainingtype'] + str(form.cleaned_data['startdate']) + str(form.cleaned_data['enddate'])
 			obj.save()
 			return redirect('/account/home')
 		else:
