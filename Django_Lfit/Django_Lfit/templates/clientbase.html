@@ -71,7 +71,7 @@
                 <li class="dropdown" style="float:right">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <span class="glyphicon glyphicon-user"></span>
-                        <strong>Salman</strong>
+                        <strong>{{cycle_data.client}}</strong>
                         <span class="glyphicon glyphicon-chevron-down"></span>
                     </a>
                     <ul class="dropdown-menu">
@@ -84,7 +84,7 @@
                                         </p>
                                     </div>
                                     <div class="col-lg-8">
-                                        <p class="text-left"><strong>Salman Khan</strong></p>
+                                        <p class="text-left"><strong>{{cycle_data.client}}</strong></p>
                                         <p class="text-left small">crazytodevelop@@gmail.com</p>
                                         <p class="text-left">
                                             <a href="#" class="btn btn-primary btn-block btn-sm">Profile</a>
@@ -102,7 +102,7 @@
             <li class="divider"></li>
             <li><a href="#">Favourites Snippets <span class="glyphicon glyphicon-heart pull-right"></span></a></li>
             <li class="divider"></li>
-            <li><a href="#">Sign Out <span class="glyphicon glyphicon-log-out pull-right"></span></a></li>
+            <li><a href="{% url 'user:logout' %}">Sign Out <span class="glyphicon glyphicon-log-out pull-right"></span></a></li>
                     </ul>
                 </li>
             </ul>
